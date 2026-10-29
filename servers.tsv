@@ -1,13 +1,60 @@
-Сервер	Расположение	Направления в InternetPulse	Скачивание	Отдача	Источник
-RastrNet	Красноярск	Скачивание и отдача	http://speedtest.rastrnet.ru/1GB.zip	http://speedtest.rastrnet.ru/speedtest/upload.php	https://speedtest.rastrnet.ru/
-Selectel	Россия	Только скачивание	https://speedtest.selectel.ru/1GB		https://selectel.ru/speedtest/
-WCloud	Россия	Только скачивание	https://speedtest.wcloud.ru/1GB		https://speedtest.wcloud.ru/
-Truenetwork	Новокузнецк	Только скачивание	https://mirror.truenetwork.ru/speedtest/1GiB		https://speedtest.rastrnet.ru/
-EKACOD	Екатеринбург	Только скачивание	https://lg.ekacod.ru/1000MB.test		https://lg.ekacod.ru/
-serv.host	Москва	Только скачивание	https://msk.lg.serv.host/files/1GB		https://serv.host/speed-check/
-EDIS	Москва	Только скачивание	https://ru.edisglobal.com/1000MB.test		https://ru.edisglobal.com/
-EDIS	Санкт-Петербург	Только скачивание	https://rusp.edisglobal.com/1000MB.test		https://rusp.edisglobal.com/
-ProfitServer	Москва	Только скачивание	https://b250dc701ca686615a7c463b29b7f8ed.ip.looking.house/100.mb		https://profitserver.net/datacenters/
-ProfitServer	Челябинск	Только скачивание	https://fa9b5207f1aa299046b3af5e5790098b.ip.looking.house/100.mb		https://profitserver.net/datacenters/
-eServer	Москва	Только скачивание	https://lg.ru.eserver.net/test/1GB.bin		https://www.eserver.ru/cart.php?gid=18&language=spanish
-Virty	Санкт-Петербург	Только скачивание	http://lg.spb.virty.io/1000MB.test		https://virty.io/ru/docs/dc/
+id	provider	country	city	download	upload	source
+rastr	RastrNet	RU	Красноярск	http://speedtest.rastrnet.ru/1GB.zip	http://speedtest.rastrnet.ru/speedtest/upload.php	https://speedtest.rastrnet.ru/
+selectel	Selectel	RU	Россия	https://speedtest.selectel.ru/1GB		https://selectel.ru/speedtest/
+true	Truenetwork	RU	Новокузнецк	https://mirror.truenetwork.ru/speedtest/1GiB		https://speedtest.rastrnet.ru/
+eka	EKACOD	RU	Екатеринбург	https://lg.ekacod.ru/1000MB.test		https://lg.ekacod.ru/
+serv	serv.host	RU	Москва	https://msk.lg.serv.host/files/1GB		https://serv.host/speed-check/
+edis-msk	EDIS	RU	Москва	https://ru.edisglobal.com/1000MB.test		https://ru.edisglobal.com/
+edis-spb	EDIS	RU	Санкт-Петербург	https://rusp.edisglobal.com/1000MB.test		https://rusp.edisglobal.com/
+eserver	eServer	RU	Москва	https://lg.ru.eserver.net/test/1GB.bin		https://www.eserver.ru/cart.php?gid=18&language=spanish
+virty	Virty	RU	Санкт-Петербург	http://lg.spb.virty.io/1000MB.test		https://virty.io/ru/docs/dc/
+gb-12	EDIS Global	GB	London · City	https://uk.edisglobal.com/1000MB.test		https://uk.edisglobal.com/
+gb-13	EDIS Global	GB	London · Docklands	https://uklnd.edisglobal.com/1000MB.test		https://uklnd.edisglobal.com/
+fr-14	EDIS Global	FR	Paris	https://fr.edisglobal.com/1000MB.test		https://fr.edisglobal.com/
+de-15	EDIS Global	DE	Frankfurt	https://de.edisglobal.com/1000MB.test		https://de.edisglobal.com/
+es-16	EDIS Global	ES	Seville	https://es.edisglobal.com/1000MB.test		https://es.edisglobal.com/
+us-17	EDIS Global	US	New York	https://us.edisglobal.com/1000MB.test		https://us.edisglobal.com/
+us-18	EDIS Global	US	Los Angeles	https://uslax.edisglobal.com/1000MB.test		https://uslax.edisglobal.com/
+us-19	EDIS Global	US	Miami	https://usmia.edisglobal.com/1000MB.test		https://usmia.edisglobal.com/
+gb-29	OVHcloud	GB	Erith	https://eri.proof.ovh.net/files/1Gb.dat		https://eri.proof.ovh.net/files/
+fr-30	OVHcloud	FR	Roubaix	https://rbx.proof.ovh.net/files/1Gb.dat		https://rbx.proof.ovh.net/files/
+fr-31	OVHcloud	FR	Strasbourg	https://sbg.proof.ovh.net/files/1Gb.dat		https://sbg.proof.ovh.net/files/
+fr-32	OVHcloud	FR	Gravelines	https://gra.proof.ovh.net/files/1Gb.dat		https://gra.proof.ovh.net/files/
+us-33	OVHcloud	US	Hillsboro	https://hil.proof.ovh.us/files/1Gb.dat		https://hil.proof.ovh.us/files/
+us-34	OVHcloud	US	Vint Hill	https://vin.proof.ovh.us/files/1Gb.dat		https://vin.proof.ovh.us/files/
+gb-35	Vultr	GB	London	https://lon-gb-ping.vultr.com/vultr.com.1000MB.bin		https://lon-gb-ping.vultr.com/
+fr-36	Vultr	FR	Paris	https://par-fr-ping.vultr.com/vultr.com.1000MB.bin		https://par-fr-ping.vultr.com/
+de-37	Vultr	DE	Frankfurt	https://fra-de-ping.vultr.com/vultr.com.1000MB.bin		https://fra-de-ping.vultr.com/
+es-38	Vultr	ES	Madrid	https://mad-es-ping.vultr.com/vultr.com.1000MB.bin		https://mad-es-ping.vultr.com/
+de-44	Hetzner	DE	Falkenstein	https://fsn1-speed.hetzner.com/1GB.bin		https://fsn1-speed.hetzner.com/
+de-45	Hetzner	DE	Nuremberg	https://nbg1-speed.hetzner.com/1GB.bin		https://nbg1-speed.hetzner.com/
+de-46	DeinServerHost	DE	Frankfurt	https://lg.deinserverhost.de/1GB.test		https://lg.deinserverhost.de/
+gb-50	Psychz Networks	GB	London	https://lg.lon.psychz.net/200MB.test		https://lg.lon.psychz.net/
+fr-51	Scaleway	FR	Paris	http://ping.online.net/1000Mo.dat		https://ping.online.net/
+fr-52	Scaleway	FR	Paris · Scaleway	http://ping-90ms.online.net/1000Mo.dat		https://www.scaleway.com/en/docs/faq/
+es-53	ColdHosting	ES	Barcelona	https://lg.coldhosting.es/files/1G.file		https://lg.coldhosting.es/files/
+es-54	OneProvider	ES	Barcelona	https://lg-es-bcn.oneprovider.net/1000mb.bin		https://lg-es-bcn.oneprovider.net/
+es-55	Hostealo	ES	Madrid	https://lg-madrid.hostealo.es/1GB.bin		https://lg-frankfurt.hostealo.es/
+es-57	Psychz Networks	ES	Barcelona	https://lg.bcn.psychz.net/200MB.test		https://lg.bcn.psychz.net/
+us-61	Hetzner	US	Ashburn	https://ash-speed.hetzner.com/1GB.bin		https://ash-speed.hetzner.com/
+gb-e2884b0152	INTROSERV	GB	London	https://lg.uk.introserv.com/1GB.test		https://lg.uk.introserv.com/
+fr-677f911f03	Hosteons	FR	Paris	https://lg.fr.hosteons.com/1000MB.test		https://lg.fr.hosteons.com/
+fr-ae9e7867e2	INTROSERV Strasbourg	FR	Strasbourg	https://lg.fr.introserv.com/1GB.test		https://lg.fr.introserv.com/
+fr-cc70422de3	RedSwitches	FR	Paris	https://lg.pa6.redswitches.com/downloads/1G.bin		https://lg.pa6.redswitches.com/
+de-7fe2e7d25d	Hosteons	DE	Frankfurt	https://lg.de.hosteons.com/1000MB.test		https://lg.de.hosteons.com/
+es-dcc19a0f3f	GINERNET	ES	Madrid	https://lg.ginernet.com/1000MB.test		https://lg.ginernet.com/
+gb-19548abd68	Vodafone UK	GB	Edinburgh	http://speedtest-edinburgh.vodafone.co.uk:8080/speedtest/random4000x4000.jpg		https://www.speedtest.net/api/js/servers?engine=js&limit=30&search=United%20Kingdom
+gb-b94fa7f5dd	YouFibre	GB	Edinburgh	http://speedtest-1.edinburgh.network.as212655.net:8080/speedtest/random4000x4000.jpg		https://www.speedtest.net/api/js/servers?engine=js&limit=30&search=United%20Kingdom
+gb-24b9bc1a84	Virgin Media O2	GB	Runcorn	http://dab-rcn1-speedtest.dab.02.net:8080/speedtest/random4000x4000.jpg		https://www.speedtest.net/api/js/servers?engine=js&limit=30&search=United%20Kingdom
+gb-b022228fb5	Hyperoptic Limited	GB	Manchester	http://speedman.hyperoptic.com:8080/speedtest/random4000x4000.jpg		https://www.speedtest.net/api/js/servers?engine=js&limit=30&search=United%20Kingdom
+us-6efb6a9f79	Spectrum	US	Durham, NC	http://radnc-speedtest-ookla-01.st.charter.com:8080/speedtest/random4000x4000.jpg		https://www.speedtest.net/api/js/servers?engine=js&limit=30&search=United%20States
+us-15b3f5e6a3	AT&T	US	Raleigh, NC	http://rlgncook.speedtest.sbcglobal.net:8080/speedtest/random4000x4000.jpg		https://www.speedtest.net/api/js/servers?engine=js&limit=30&search=United%20States
+us-0b3cc3a5e2	Optimum Online	US	Rocky Mount, NC	http://speedtest31.suddenlink.net:8080/speedtest/random4000x4000.jpg		https://www.speedtest.net/api/js/servers?engine=js&limit=30&search=United%20States
+us-483395a76b	Brightspeed	US	Rocky Mount, NC	http://rcmt-speedtest-02.brightspeed.com:8080/speedtest/random4000x4000.jpg		https://www.speedtest.net/api/js/servers?engine=js&limit=30&search=United%20States
+de-bd71378404	Deutsche Glasfaser Wholesale	DE	Dusseldorf	http://speedtest2.dg-sys.net:8080/speedtest/random4000x4000.jpg		https://www.speedtest.net/api/js/servers?engine=js&limit=30&search=Germany
+de-99abd6a176	WIIT AG	DE	Dusseldorf	http://speed.de-west-02.wiit-cloud.io:8080/speedtest/random4000x4000.jpg		https://www.speedtest.net/api/js/servers?engine=js&limit=30&search=Germany
+de-77d9b32e09	Telefónica Germany GmbH & Co. OHG	DE	Düsseldorf	http://ookla.dus-02.testpub.telefonica.de:8080/speedtest/random4000x4000.jpg		https://www.speedtest.net/api/js/servers?engine=js&limit=30&search=Germany
+de-9e0bf0fb59	1&1 Mobilfunk	DE	Munster	http://ookla2.1und1-mobilfunk.de:8080/speedtest/random4000x4000.jpg		https://www.speedtest.net/api/js/servers?engine=js&limit=30&search=Germany
+es-092e91bd62	Vodafone ES	ES	Gran Canaria	http://speedtestgrancanaria.vodafone.es:8080/speedtest/random4000x4000.jpg		https://www.speedtest.net/api/js/servers?engine=js&limit=30&search=Spain
+es-2d777ea6e1	Orange	ES	Santa Cruz de Tenerife	http://testvelocidadten.orange.es:8080/speedtest/random4000x4000.jpg		https://www.speedtest.net/api/js/servers?engine=js&limit=30&search=Spain
+es-e8b8322715	Digimobil	ES	Santa Cruz de Tenerife	http://speedtest15.digimobil.es:8080/speedtest/random4000x4000.jpg		https://www.speedtest.net/api/js/servers?engine=js&limit=30&search=Spain

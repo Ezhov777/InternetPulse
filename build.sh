@@ -34,6 +34,8 @@ cat > "$task_app/Contents/Info.plist" <<PLIST
 PLIST
 cp Assets/AppIcon.icns "$task_app/Contents/Resources/"
 cp LICENSE "$task_app/Contents/Resources/LICENSE.txt"
+cp Resources/Translations.json "$task_app/Contents/Resources/"
+cp Resources/Servers.json "$task_app/Contents/Resources/"
 cp Resources/ReleaseHistory.json "$task_app/Contents/Resources/"
 /usr/bin/codesign --force --sign - "$task_app"
 /usr/bin/codesign --verify --strict "$task_app"
