@@ -4,8 +4,8 @@ using System.Net.Sockets;
 using System.Diagnostics;
 using System.Text;
 static void Check(bool value,string message){if(!value)throw new Exception(message);}
-I18n.Code="ru";Check(I18n.Amount(30_232_170_000,"MB").Replace('\u00a0',' ').Replace('\u202f',' ')=="30 232,17 МБ","Russian grouping");
-I18n.Code="en";Check(I18n.Amount(30_232_170_000,"MB")=="30,232.17 MB","English grouping");Check(I18n.Amount(1_000_000_000_000,"TB")=="1.00 TB","TB decimal units");
+I18n.Code="ru";Check(I18n.Amount(42_819_560_000,"MB").Replace('\u00a0',' ').Replace('\u202f',' ')=="42 819,56 МБ","Russian grouping");
+I18n.Code="en";Check(I18n.Amount(42_819_560_000,"MB")=="42,819.56 MB","English grouping");Check(I18n.Amount(1_000_000_000_000,"TB")=="1.00 TB","TB decimal units");
 foreach(var lang in I18n.Languages){I18n.Code=lang.Code;Check(I18n.L("Начать тест")!="Начать тест"||lang.Code=="ru","Translated start button");}
 string directory=Path.Combine(Path.GetTempPath(),"InternetPulse-test-"+Guid.NewGuid());var store=new Store(directory);store.Record(4_000_000,2_000_000,DateTimeOffset.Now.AddDays(-1));store.Record(1_000_000_000,3,DateTimeOffset.Now);store.Save();Check(new Store(directory).Value.History.Count==2,"History survives restart");store.Value.History.Clear();store.Save();Check(new Store(directory).Value.History.Count==0,"Reset persists");
 var listener=new TcpListener(IPAddress.Loopback,0);listener.Start();int port=((IPEndPoint)listener.LocalEndpoint).Port;listener.Stop();using var server=new HttpListener();server.Prefixes.Add($"http://127.0.0.1:{port}/");server.Start();using var done=new CancellationTokenSource();var handlers=new List<Task>();long serverUploaded=0;
