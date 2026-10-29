@@ -1,14 +1,15 @@
 name: macOS build and test
 on:
   push:
-    branches: [main]
+    branches: [main, v1.7]
+    paths: ['Sources/**', 'Resources/**', 'Tests/**', 'Assets/**', 'build.sh', 'scripts/**', 'VERSION', 'BUILD_NUMBER', '.github/workflows/macos.yml']
   pull_request:
   workflow_dispatch:
 permissions:
   contents: read
 jobs:
   build:
-    runs-on: macos-latest
+    runs-on: macos-15-intel
     timeout-minutes: 15
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1

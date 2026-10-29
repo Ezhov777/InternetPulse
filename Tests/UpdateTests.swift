@@ -2,6 +2,7 @@ import Foundation
 
 @main struct UpdateTests {
     @MainActor static func main() async {
+        AppLanguage.shared.code="ru"
         assert(AppVersion("1.10.0")!>AppVersion("1.6.0")!)
         assert(AppVersion("v1.6")==AppVersion("1.6.0"))
         assert(AppVersion("1.6.0+build.7")==AppVersion("1.6.0"))

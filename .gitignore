@@ -16,3 +16,7 @@ xcuserdata/
 *.p8
 .swiftpm/
 .build/
+
+# .NET build outputs
+**/bin/
+**/obj/

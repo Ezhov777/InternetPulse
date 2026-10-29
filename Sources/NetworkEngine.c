@@ -76,7 +76,7 @@ static int progress(void *v, curl_off_t dt, curl_off_t dn, curl_off_t ut, curl_o
 static void *run(void *v) {
     Worker *w=v;
     CURL *c=curl_easy_init();
-    if(!c) { message("Не удалось создать HTTP-соединение",1); return NULL; }
+    if(!c) { message("Could not create HTTP connection",1); return NULL; }
     curl_easy_setopt(c,CURLOPT_URL,w->url);
     curl_easy_setopt(c,CURLOPT_NOSIGNAL,1L);
     curl_easy_setopt(c,CURLOPT_CONNECTTIMEOUT,8L);
@@ -143,7 +143,7 @@ static void *run(void *v) {
                 pthread_mutex_unlock(&lock);
                 pause_for(20);
             } else {
-                if(failures) message(w->kind==0 ? "Скачивание восстановлено" : "Отдача восстановлена",0);
+                if(failures) message(w->kind==0 ? "Download restored" : "Upload restored",0);
                 // Empty downloads are rejected above; successful transfers can restart immediately.
             }
             failures=0;
@@ -155,7 +155,7 @@ static void *run(void *v) {
             } else {
                 char msg[256];
                 int delay=failures<5 ? (1<<failures) : 30;
-                snprintf(msg,sizeof(msg),"%s: %s (HTTP %ld). Повтор через %d с", w->kind==0 ? "Скачивание" : "Отдача",curl_easy_strerror(r),status,delay);
+                snprintf(msg,sizeof(msg),"%s: %s (HTTP %ld). Retry in %d s", w->kind==0 ? "Download" : "Upload",curl_easy_strerror(r),status,delay);
                 message(msg,1);
                 pause_for(delay*10);
             }
@@ -180,7 +180,7 @@ int rp_start_parallel(const char *d, const char *u, double down, double up, int 
         w->kind=k; w->mbps=unlimited ? 0 : (k==0 ? down : up)/streams;
         snprintf(w->url,sizeof(w->url),"%s",k==1 ? u : (down>0 ? d : u));
         if(pthread_create(&threads[thread_count],NULL,run,w)) {
-            message("Не удалось запустить сетевой поток",1);
+            message("Could not start network worker",1);
             atomic_store(&stopped,1); return 0;
         }
         thread_count++;

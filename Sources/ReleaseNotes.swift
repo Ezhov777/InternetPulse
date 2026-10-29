@@ -6,6 +6,12 @@ struct ReleaseEntry:Decodable,Identifiable {
     let title:String
     let changes:[String]
     var id:String {version}
+    var dateFormatted:String {
+        let parser=DateFormatter();parser.locale=Locale(identifier:"en_US_POSIX");parser.dateFormat="yyyy-MM-dd"
+        guard let value=parser.date(from:date) else {return date}
+        let format=DateFormatter();format.locale=AppLanguage.shared.locale;format.dateStyle = .medium
+        return format.string(from:value)
+    }
 }
 
 enum ReleaseHistory {
@@ -19,37 +25,37 @@ enum ReleaseHistory {
 struct ReleaseNotesView:View {
     @Environment(\.dismiss) private var dismiss
     let releases=ReleaseHistory.load()
-    var currentVersion:String {Bundle.main.object(forInfoDictionaryKey:"CFBundleShortVersionString") as? String ?? "Development"}
+    var currentVersion:String {BuildInfo.version}
     var body:some View {
         VStack(alignment:.leading,spacing:22) {
             HStack(alignment:.top) {
                 VStack(alignment:.leading,spacing:9) {
                     Text("INTERNET PULSE").font(.system(size:10,weight:.bold,design:.monospaced)).tracking(2).foregroundStyle(mint)
-                    Text("Что нового").font(.system(size:32,weight:.semibold)).tracking(-0.7)
+                    Text(L("Что нового")).font(.system(size:32,weight:.semibold)).tracking(-0.7)
                 }
                 Spacer()
                 Button {dismiss()} label: {Image(systemName:"xmark").font(.system(size:12,weight:.semibold)).frame(width:30,height:30)}
-                    .buttonStyle(.plain).background(.white.opacity(0.06),in:Circle()).keyboardShortcut(.cancelAction).help("Закрыть историю изменений")
+                    .buttonStyle(.plain).background(.white.opacity(0.06),in:Circle()).keyboardShortcut(.cancelAction).help(L("Закрыть историю изменений"))
             }
             ScrollView {
                 VStack(alignment:.leading,spacing:16) {
-                    if releases.isEmpty {Text("История изменений недоступна в этой сборке.").foregroundStyle(.secondary)}
+                    if releases.isEmpty {Text(L("История изменений недоступна в этой сборке.")).foregroundStyle(.secondary)}
                     ForEach(releases) { release in
                         VStack(alignment:.leading,spacing:16) {
                             HStack {
                                 Text(release.version).font(.system(size:24,weight:.light,design:.rounded)).foregroundStyle(mint)
                                 if release.version==currentVersion {
-                                    Text("Текущая версия").font(.system(size:9,weight:.medium)).padding(.horizontal,9).padding(.vertical,5).background(mint.opacity(0.08),in:Capsule()).foregroundStyle(mint)
+                                    Text(L("Текущая версия")).font(.system(size:9,weight:.medium)).padding(.horizontal,9).padding(.vertical,5).background(mint.opacity(0.08),in:Capsule()).foregroundStyle(mint)
                                 }
                                 Spacer()
-                                Text(release.date).font(.system(size:10)).foregroundStyle(.secondary)
+                                Text(release.dateFormatted).font(.system(size:10)).foregroundStyle(.secondary)
                             }
-                            Text(release.title).font(.system(size:17,weight:.medium))
+                            Text(L(release.title)).font(.system(size:17,weight:.medium))
                             VStack(alignment:.leading,spacing:11) {
                                 ForEach(Array(release.changes.enumerated()),id:\.offset) { _,change in
                                     HStack(alignment:.top,spacing:10) {
                                         Circle().fill(blue.opacity(0.8)).frame(width:4,height:4).padding(.top,6)
-                                        Text(change).font(.system(size:12)).foregroundStyle(.white.opacity(0.75)).fixedSize(horizontal:false,vertical:true)
+                                        Text(L(change)).font(.system(size:12)).foregroundStyle(.white.opacity(0.75)).fixedSize(horizontal:false,vertical:true)
                                     }
                                 }
                             }
@@ -58,9 +64,9 @@ struct ReleaseNotesView:View {
                 }.padding(2)
             }
             HStack {
-                Text("Версия \(currentVersion)").font(.system(size:10,design:.monospaced)).foregroundStyle(.secondary)
+                Text(L("Версия {0}",currentVersion)).font(.system(size:10,design:.monospaced)).foregroundStyle(.secondary)
                 Spacer()
-                Button("Готово") {dismiss()}.buttonStyle(.borderedProminent).tint(mint).foregroundStyle(.black).keyboardShortcut(.defaultAction)
+                Button(L("Готово")) {dismiss()}.buttonStyle(.borderedProminent).tint(mint).foregroundStyle(.black).keyboardShortcut(.defaultAction)
             }
         }.padding(28).frame(width:590,height:610).background {
             ZStack {

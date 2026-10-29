@@ -1,23 +1,13 @@
-# План развития
+# Internet Pulse
 
-## Следующие обновления macOS
+## 1.7
 
-- Собрать обратную связь по реальным соединениям и тестовым серверам.
-- Улучшить доступность интерфейса, локализацию и диагностику ошибок.
-- Подготовить Developer ID и нотариализацию для публичных загрузок.
-- Оценить поддержку Intel Mac отдельно от текущего arm64-выпуска.
+Native macOS and Windows 11 x64 builds; five languages, country server search, decimal traffic units through TB, local history and manual GitHub update checks.
 
-## Windows 11
+## Later, subject to discussion
 
-Windows-версия запланирована, реализации и готовой сборки пока нет.
+- Developer ID notarization and Authenticode signing.
+- Windows ARM64 and Intel Mac builds after platform testing.
+- Server availability refresh without replacing the complete app.
 
-Ожидаемые возможности: непрерывный тест в обе стороны, лимиты и максимум,
-параллельные соединения, график, рекорды сессии, дневная история и CSV.
-
-Перед разработкой нужно выбрать UI-технологию Windows, проверить перенос
-сетевого движка и хранения настроек, продумать установку и подпись приложения.
-Текущий интерфейс SwiftUI/AppKit и системный macOS libcurl не работают на
-Windows без адаптации. Общие форматы версии, CSV, каталога и сценарии проверки
-нужно сохранить совместимыми между платформами.
-
-Даты и номер выпуска будут определены после выбора объёма работ.
+No new feature is a commitment until its scope is agreed with the maintainer.
