@@ -18,15 +18,6 @@
     "upload": null
   },
   {
-    "id": "wcloud",
-    "name": "WCloud",
-    "location": "Россия",
-    "download": "https://speedtest.wcloud.ru/1GB",
-    "source": "https://speedtest.wcloud.ru/",
-    "country": "RU",
-    "upload": null
-  },
-  {
     "id": "true",
     "name": "Truenetwork",
     "location": "Новокузнецк",
@@ -68,24 +59,6 @@
     "location": "Санкт-Петербург",
     "download": "https://rusp.edisglobal.com/1000MB.test",
     "source": "https://rusp.edisglobal.com/",
-    "country": "RU",
-    "upload": null
-  },
-  {
-    "id": "profit-msk",
-    "name": "ProfitServer",
-    "location": "Москва",
-    "download": "https://b250dc701ca686615a7c463b29b7f8ed.ip.looking.house/100.mb",
-    "source": "https://profitserver.net/datacenters/",
-    "country": "RU",
-    "upload": null
-  },
-  {
-    "id": "profit-chk",
-    "name": "ProfitServer",
-    "location": "Челябинск",
-    "download": "https://fa9b5207f1aa299046b3af5e5790098b.ip.looking.house/100.mb",
-    "source": "https://profitserver.net/datacenters/",
     "country": "RU",
     "upload": null
   },
@@ -180,87 +153,6 @@
     "upload": null
   },
   {
-    "id": "gb-20",
-    "name": "JustHost",
-    "location": "London",
-    "country": "GB",
-    "download": "http://91.149.202.91/1000MB.test",
-    "source": "https://justhost.asia/tr/article/looking_glass",
-    "upload": null
-  },
-  {
-    "id": "fr-21",
-    "name": "JustHost",
-    "location": "Paris",
-    "country": "FR",
-    "download": "http://185.143.222.48/1000MB.test",
-    "source": "https://justhost.asia/tr/article/looking_glass",
-    "upload": null
-  },
-  {
-    "id": "de-22",
-    "name": "JustHost",
-    "location": "Frankfurt",
-    "country": "DE",
-    "download": "http://91.149.223.204/1000MB.test",
-    "source": "https://justhost.asia/tr/article/looking_glass",
-    "upload": null
-  },
-  {
-    "id": "es-23",
-    "name": "JustHost",
-    "location": "Madrid",
-    "country": "ES",
-    "download": "http://91.149.242.38/1000MB.test",
-    "source": "https://justhost.asia/tr/article/looking_glass",
-    "upload": null
-  },
-  {
-    "id": "gb-24",
-    "name": "Clouvider",
-    "location": "London",
-    "country": "GB",
-    "download": "https://lon.speedtest.clouvider.net/1000MB.bin",
-    "source": "https://lon.speedtest.clouvider.net/",
-    "upload": null
-  },
-  {
-    "id": "de-25",
-    "name": "Clouvider",
-    "location": "Frankfurt",
-    "country": "DE",
-    "download": "https://fra.speedtest.clouvider.net/1000MB.bin",
-    "source": "https://fra.speedtest.clouvider.net/",
-    "upload": null
-  },
-  {
-    "id": "us-26",
-    "name": "Clouvider",
-    "location": "New York",
-    "country": "US",
-    "download": "https://nyc.speedtest.clouvider.net/1000MB.bin",
-    "source": "https://nyc.speedtest.clouvider.net/",
-    "upload": null
-  },
-  {
-    "id": "us-27",
-    "name": "Clouvider",
-    "location": "Los Angeles",
-    "country": "US",
-    "download": "https://la.speedtest.clouvider.net/1000MB.bin",
-    "source": "https://la.speedtest.clouvider.net/",
-    "upload": null
-  },
-  {
-    "id": "us-28",
-    "name": "Clouvider",
-    "location": "Atlanta",
-    "country": "US",
-    "download": "https://atl.speedtest.clouvider.net/1000MB.bin",
-    "source": "https://atl.speedtest.clouvider.net/",
-    "upload": null
-  },
-  {
     "id": "gb-29",
     "name": "OVHcloud",
     "location": "Erith",
@@ -351,51 +243,6 @@
     "upload": null
   },
   {
-    "id": "gb-39",
-    "name": "Akamai / Linode",
-    "location": "London",
-    "country": "GB",
-    "download": "http://speedtest.london.linode.com/100MB-london.bin",
-    "source": "http://speedtest.london.linode.com/",
-    "upload": null
-  },
-  {
-    "id": "fr-40",
-    "name": "Akamai / Linode",
-    "location": "Paris",
-    "country": "FR",
-    "download": "http://speedtest.paris.linode.com/100MB-paris.bin",
-    "source": "http://speedtest.paris.linode.com/",
-    "upload": null
-  },
-  {
-    "id": "de-41",
-    "name": "Akamai / Linode",
-    "location": "Frankfurt",
-    "country": "DE",
-    "download": "http://speedtest.frankfurt.linode.com/100MB-frankfurt.bin",
-    "source": "http://speedtest.frankfurt.linode.com/",
-    "upload": null
-  },
-  {
-    "id": "es-42",
-    "name": "Akamai / Linode",
-    "location": "Madrid",
-    "country": "ES",
-    "download": "http://speedtest.madrid.linode.com/100MB-madrid.bin",
-    "source": "http://speedtest.madrid.linode.com/",
-    "upload": null
-  },
-  {
-    "id": "us-43",
-    "name": "Akamai / Linode",
-    "location": "Newark",
-    "country": "US",
-    "download": "http://speedtest.newark.linode.com/100MB-newark.bin",
-    "source": "http://speedtest.newark.linode.com/",
-    "upload": null
-  },
-  {
     "id": "de-44",
     "name": "Hetzner",
     "location": "Falkenstein",
@@ -420,33 +267,6 @@
     "country": "DE",
     "download": "https://lg.deinserverhost.de/1GB.test",
     "source": "https://lg.deinserverhost.de/",
-    "upload": null
-  },
-  {
-    "id": "de-47",
-    "name": "Leaseweb",
-    "location": "Frankfurt",
-    "country": "DE",
-    "download": "https://speedtest.fra1.de.leaseweb.net/1000mb.bin",
-    "source": "https://speedtest.fra1.de.leaseweb.net/",
-    "upload": null
-  },
-  {
-    "id": "gb-48",
-    "name": "ThinkBroadband",
-    "location": "United Kingdom",
-    "country": "GB",
-    "download": "https://ipv4.download.thinkbroadband.com/1GB.zip",
-    "source": "https://www.thinkbroadband.com/download",
-    "upload": null
-  },
-  {
-    "id": "gb-49",
-    "name": "EUGameHost",
-    "location": "Norfolk",
-    "country": "GB",
-    "download": "https://lg.eugamehost.com/files/1G.file",
-    "source": "https://lg.eugamehost.com/files/",
     "upload": null
   },
   {
@@ -504,39 +324,12 @@
     "upload": null
   },
   {
-    "id": "es-56",
-    "name": "iFog",
-    "location": "Barcelona",
-    "country": "ES",
-    "download": "https://lg.bcn.fognet.ch/100MB.test",
-    "source": "https://lg.bcn.fognet.ch/",
-    "upload": null
-  },
-  {
     "id": "es-57",
     "name": "Psychz Networks",
     "location": "Barcelona",
     "country": "ES",
     "download": "https://lg.bcn.psychz.net/200MB.test",
     "source": "https://lg.bcn.psychz.net/",
-    "upload": null
-  },
-  {
-    "id": "es-58",
-    "name": "FDC Servers",
-    "location": "Madrid",
-    "country": "ES",
-    "download": "http://lg-mad.fdcservers.net/100MBtest.zip",
-    "source": "https://fdcservers.net/locations",
-    "upload": null
-  },
-  {
-    "id": "fr-60",
-    "name": "FDC Servers",
-    "location": "Paris",
-    "country": "FR",
-    "download": "http://lg-pa10.fdcservers.net/100MBtest.zip",
-    "source": "https://fdcservers.net/locations",
     "upload": null
   },
   {
@@ -549,12 +342,192 @@
     "upload": null
   },
   {
-    "id": "de-fdc",
-    "name": "FDC Servers",
+    "id": "gb-e2884b0152",
+    "name": "INTROSERV",
+    "location": "London",
+    "country": "GB",
+    "download": "https://lg.uk.introserv.com/1GB.test",
+    "upload": null,
+    "source": "https://lg.uk.introserv.com/"
+  },
+  {
+    "id": "fr-677f911f03",
+    "name": "Hosteons",
+    "location": "Paris",
+    "country": "FR",
+    "download": "https://lg.fr.hosteons.com/1000MB.test",
+    "upload": null,
+    "source": "https://lg.fr.hosteons.com/"
+  },
+  {
+    "id": "fr-ae9e7867e2",
+    "name": "INTROSERV Strasbourg",
+    "location": "Strasbourg",
+    "country": "FR",
+    "download": "https://lg.fr.introserv.com/1GB.test",
+    "upload": null,
+    "source": "https://lg.fr.introserv.com/"
+  },
+  {
+    "id": "fr-cc70422de3",
+    "name": "RedSwitches",
+    "location": "Paris",
+    "country": "FR",
+    "download": "https://lg.pa6.redswitches.com/downloads/1G.bin",
+    "upload": null,
+    "source": "https://lg.pa6.redswitches.com/"
+  },
+  {
+    "id": "de-7fe2e7d25d",
+    "name": "Hosteons",
     "location": "Frankfurt",
     "country": "DE",
-    "download": "http://lg-fr8.fdcservers.net/100MBtest.zip",
+    "download": "https://lg.de.hosteons.com/1000MB.test",
     "upload": null,
-    "source": "https://fdcservers.net/locations"
+    "source": "https://lg.de.hosteons.com/"
+  },
+  {
+    "id": "es-dcc19a0f3f",
+    "name": "GINERNET",
+    "location": "Madrid",
+    "country": "ES",
+    "download": "https://lg.ginernet.com/1000MB.test",
+    "upload": null,
+    "source": "https://lg.ginernet.com/"
+  },
+  {
+    "id": "gb-19548abd68",
+    "name": "Vodafone UK",
+    "location": "Edinburgh",
+    "country": "GB",
+    "download": "http://speedtest-edinburgh.vodafone.co.uk:8080/speedtest/random4000x4000.jpg",
+    "upload": null,
+    "source": "https://www.speedtest.net/api/js/servers?engine=js&limit=30&search=United%20Kingdom"
+  },
+  {
+    "id": "gb-b94fa7f5dd",
+    "name": "YouFibre",
+    "location": "Edinburgh",
+    "country": "GB",
+    "download": "http://speedtest-1.edinburgh.network.as212655.net:8080/speedtest/random4000x4000.jpg",
+    "upload": null,
+    "source": "https://www.speedtest.net/api/js/servers?engine=js&limit=30&search=United%20Kingdom"
+  },
+  {
+    "id": "gb-24b9bc1a84",
+    "name": "Virgin Media O2",
+    "location": "Runcorn",
+    "country": "GB",
+    "download": "http://dab-rcn1-speedtest.dab.02.net:8080/speedtest/random4000x4000.jpg",
+    "upload": null,
+    "source": "https://www.speedtest.net/api/js/servers?engine=js&limit=30&search=United%20Kingdom"
+  },
+  {
+    "id": "gb-b022228fb5",
+    "name": "Hyperoptic Limited",
+    "location": "Manchester",
+    "country": "GB",
+    "download": "http://speedman.hyperoptic.com:8080/speedtest/random4000x4000.jpg",
+    "upload": null,
+    "source": "https://www.speedtest.net/api/js/servers?engine=js&limit=30&search=United%20Kingdom"
+  },
+  {
+    "id": "us-6efb6a9f79",
+    "name": "Spectrum",
+    "location": "Durham, NC",
+    "country": "US",
+    "download": "http://radnc-speedtest-ookla-01.st.charter.com:8080/speedtest/random4000x4000.jpg",
+    "upload": null,
+    "source": "https://www.speedtest.net/api/js/servers?engine=js&limit=30&search=United%20States"
+  },
+  {
+    "id": "us-15b3f5e6a3",
+    "name": "AT&T",
+    "location": "Raleigh, NC",
+    "country": "US",
+    "download": "http://rlgncook.speedtest.sbcglobal.net:8080/speedtest/random4000x4000.jpg",
+    "upload": null,
+    "source": "https://www.speedtest.net/api/js/servers?engine=js&limit=30&search=United%20States"
+  },
+  {
+    "id": "us-0b3cc3a5e2",
+    "name": "Optimum Online",
+    "location": "Rocky Mount, NC",
+    "country": "US",
+    "download": "http://speedtest31.suddenlink.net:8080/speedtest/random4000x4000.jpg",
+    "upload": null,
+    "source": "https://www.speedtest.net/api/js/servers?engine=js&limit=30&search=United%20States"
+  },
+  {
+    "id": "us-483395a76b",
+    "name": "Brightspeed",
+    "location": "Rocky Mount, NC",
+    "country": "US",
+    "download": "http://rcmt-speedtest-02.brightspeed.com:8080/speedtest/random4000x4000.jpg",
+    "upload": null,
+    "source": "https://www.speedtest.net/api/js/servers?engine=js&limit=30&search=United%20States"
+  },
+  {
+    "id": "de-bd71378404",
+    "name": "Deutsche Glasfaser Wholesale",
+    "location": "Dusseldorf",
+    "country": "DE",
+    "download": "http://speedtest2.dg-sys.net:8080/speedtest/random4000x4000.jpg",
+    "upload": null,
+    "source": "https://www.speedtest.net/api/js/servers?engine=js&limit=30&search=Germany"
+  },
+  {
+    "id": "de-99abd6a176",
+    "name": "WIIT AG",
+    "location": "Dusseldorf",
+    "country": "DE",
+    "download": "http://speed.de-west-02.wiit-cloud.io:8080/speedtest/random4000x4000.jpg",
+    "upload": null,
+    "source": "https://www.speedtest.net/api/js/servers?engine=js&limit=30&search=Germany"
+  },
+  {
+    "id": "de-77d9b32e09",
+    "name": "Telefónica Germany GmbH & Co. OHG",
+    "location": "Düsseldorf",
+    "country": "DE",
+    "download": "http://ookla.dus-02.testpub.telefonica.de:8080/speedtest/random4000x4000.jpg",
+    "upload": null,
+    "source": "https://www.speedtest.net/api/js/servers?engine=js&limit=30&search=Germany"
+  },
+  {
+    "id": "de-9e0bf0fb59",
+    "name": "1&1 Mobilfunk",
+    "location": "Munster",
+    "country": "DE",
+    "download": "http://ookla2.1und1-mobilfunk.de:8080/speedtest/random4000x4000.jpg",
+    "upload": null,
+    "source": "https://www.speedtest.net/api/js/servers?engine=js&limit=30&search=Germany"
+  },
+  {
+    "id": "es-092e91bd62",
+    "name": "Vodafone ES",
+    "location": "Gran Canaria",
+    "country": "ES",
+    "download": "http://speedtestgrancanaria.vodafone.es:8080/speedtest/random4000x4000.jpg",
+    "upload": null,
+    "source": "https://www.speedtest.net/api/js/servers?engine=js&limit=30&search=Spain"
+  },
+  {
+    "id": "es-2d777ea6e1",
+    "name": "Orange",
+    "location": "Santa Cruz de Tenerife",
+    "country": "ES",
+    "download": "http://testvelocidadten.orange.es:8080/speedtest/random4000x4000.jpg",
+    "upload": null,
+    "source": "https://www.speedtest.net/api/js/servers?engine=js&limit=30&search=Spain"
+  },
+  {
+    "id": "es-e8b8322715",
+    "name": "Digimobil",
+    "location": "Santa Cruz de Tenerife",
+    "country": "ES",
+    "download": "http://speedtest15.digimobil.es:8080/speedtest/random4000x4000.jpg",
+    "upload": null,
+    "source": "https://www.speedtest.net/api/js/servers?engine=js&limit=30&search=Spain"
   }
 ]

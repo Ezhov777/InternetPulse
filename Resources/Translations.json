@@ -168,7 +168,13 @@
     "Подписана шкала скорости в Мбит/с, деления округлены.": "Подписана шкала скорости в Мбит/с, деления округлены.",
     "Добавлены мягкая заливка, подсветка линий и значения при наведении.": "Добавлены мягкая заливка, подсветка линий и значения при наведении.",
     "Обновлены интерфейс, крупные поля лимитов и переключатели длительности.": "Обновлены интерфейс, крупные поля лимитов и переключатели длительности.",
-    "Цифры скорости плавно меняются при старте и во время теста.": "Цифры скорости плавно меняются при старте и во время теста."
+    "Цифры скорости плавно меняются при старте и во время теста.": "Цифры скорости плавно меняются при старте и во время теста.",
+    "Красноярск": "Красноярск",
+    "Новокузнецк": "Новокузнецк",
+    "Екатеринбург": "Екатеринбург",
+    "Москва": "Москва",
+    "Санкт-Петербург": "Санкт-Петербург",
+    "Челябинск": "Челябинск"
   },
   "en": {
     "Бесконечный Speedtest": "Continuous Speedtest",
@@ -339,7 +345,13 @@
     "Подписана шкала скорости в Мбит/с, деления округлены.": "Labeled the speed axis in Mbps with rounded ticks.",
     "Добавлены мягкая заливка, подсветка линий и значения при наведении.": "Added soft fill, highlighted lines and hover values.",
     "Обновлены интерфейс, крупные поля лимитов и переключатели длительности.": "Updated the interface, large limit inputs and duration controls.",
-    "Цифры скорости плавно меняются при старте и во время теста.": "Speed numbers animate smoothly at startup and during the test."
+    "Цифры скорости плавно меняются при старте и во время теста.": "Speed numbers animate smoothly at startup and during the test.",
+    "Красноярск": "Krasnoyarsk",
+    "Новокузнецк": "Novokuznetsk",
+    "Екатеринбург": "Yekaterinburg",
+    "Москва": "Moscow",
+    "Санкт-Петербург": "Saint Petersburg",
+    "Челябинск": "Chelyabinsk"
   },
   "fr": {
     "Бесконечный Speedtest": "Speedtest en continu",
@@ -510,7 +522,13 @@
     "Подписана шкала скорости в Мбит/с, деления округлены.": "Axe du débit indiqué en Mbit/s avec graduations arrondies.",
     "Добавлены мягкая заливка, подсветка линий и значения при наведении.": "Ajout d’un remplissage doux, de lignes éclairées et de valeurs au survol.",
     "Обновлены интерфейс, крупные поля лимитов и переключатели длительности.": "Interface revue, champs de limite agrandis et contrôles de durée.",
-    "Цифры скорости плавно меняются при старте и во время теста.": "Les chiffres du débit évoluent en douceur au démarrage et pendant le test."
+    "Цифры скорости плавно меняются при старте и во время теста.": "Les chiffres du débit évoluent en douceur au démarrage et pendant le test.",
+    "Красноярск": "Krasnoyarsk",
+    "Новокузнецк": "Novokuznetsk",
+    "Екатеринбург": "Yekaterinburg",
+    "Москва": "Moscow",
+    "Санкт-Петербург": "Saint Petersburg",
+    "Челябинск": "Chelyabinsk"
   },
   "de": {
     "Бесконечный Speedtest": "Kontinuierlicher Speedtest",
@@ -681,7 +699,13 @@
     "Подписана шкала скорости в Мбит/с, деления округлены.": "Geschwindigkeitsachse in Mbit/s mit gerundeten Werten beschriftet.",
     "Добавлены мягкая заливка, подсветка линий и значения при наведении.": "Sanfte Füllung, hervorgehobene Linien und Werte beim Zeigen ergänzt.",
     "Обновлены интерфейс, крупные поля лимитов и переключатели длительности.": "Oberfläche, große Limitfelder und Zeitsteuerung überarbeitet.",
-    "Цифры скорости плавно меняются при старте и во время теста.": "Geschwindigkeitswerte ändern sich beim Start und im Test fließend."
+    "Цифры скорости плавно меняются при старте и во время теста.": "Geschwindigkeitswerte ändern sich beim Start und im Test fließend.",
+    "Красноярск": "Krasnoyarsk",
+    "Новокузнецк": "Novokuznetsk",
+    "Екатеринбург": "Yekaterinburg",
+    "Москва": "Moscow",
+    "Санкт-Петербург": "Saint Petersburg",
+    "Челябинск": "Chelyabinsk"
   },
   "es": {
     "Бесконечный Speedtest": "Speedtest continuo",
@@ -852,6 +876,12 @@
     "Подписана шкала скорости в Мбит/с, деления округлены.": "Eje de velocidad en Mbps con valores redondeados.",
     "Добавлены мягкая заливка, подсветка линий и значения при наведении.": "Relleno suave, líneas resaltadas y valores al pasar el cursor.",
     "Обновлены интерфейс, крупные поля лимитов и переключатели длительности.": "Interfaz renovada, campos de límite grandes y controles de duración.",
-    "Цифры скорости плавно меняются при старте и во время теста.": "Las cifras de velocidad cambian suavemente al iniciar y durante la prueba."
+    "Цифры скорости плавно меняются при старте и во время теста.": "Las cifras de velocidad cambian suavemente al iniciar y durante la prueba.",
+    "Красноярск": "Krasnoyarsk",
+    "Новокузнецк": "Novokuznetsk",
+    "Екатеринбург": "Yekaterinburg",
+    "Москва": "Moscow",
+    "Санкт-Петербург": "Saint Petersburg",
+    "Челябинск": "Chelyabinsk"
   }
 }
