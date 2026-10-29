@@ -1,3 +1,5 @@
+global using System.IO;
+global using System.Net.Http;
 using System.Globalization;
 using System.Text.Json;
 using System.Text.Json.Serialization;
@@ -13,7 +15,7 @@ public static class I18n {
     public static string Bytes(long bytes)=>Amount(bytes,bytes>=1_000_000_000_000?"TB":bytes>=1_000_000_000?"GB":"MB");
     public static string Speed(double speed)=>speed.ToString("N1",Culture);
 }
-public record Server(string id,string name,string location,string country,string download,string? upload,string source){public string Label=>$"{country} · {name} · {location} · {I18n.L(upload==null?"↓ скачивание":"↓↑ оба направления")}";}
+public record Server(string id,string name,string location,string country,string download,string? upload,string source){public string Label=>$"{country} · {name} · {I18n.L(location)} · {I18n.L(upload==null?"↓ скачивание":"↓↑ оба направления")}";}
 public record ReleaseEntry(string version,string date,string title,string[] changes);
 public record Sample(DateTimeOffset Time,double Down,double Up,long Downloaded,long Uploaded,double Latency,int Errors);
 public class DayTraffic {public string Day{get;set;}="";public long Downloaded{get;set;}public long Uploaded{get;set;}}
