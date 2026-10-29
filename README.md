@@ -2,6 +2,8 @@
 
 **Бесконечный Speedtest.** Проверяйте, как интернет держит нагрузку: одновременно скачивайте и отправляйте тестовые данные, выбирайте скорость и следите за графиком.
 
+[![Скачать Internet Pulse](docs/download.svg)](https://github.com/Ezhov777/InternetPulse/releases/latest)
+
 Native macOS app for continuous download/upload testing, configurable bandwidth limits, parallel connections, session peaks and daily traffic history.
 
 ![Пример интерфейса InternetPulse с демонстрационными значениями](docs/preview.svg)
