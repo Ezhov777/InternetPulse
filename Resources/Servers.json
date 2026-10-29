@@ -1,0 +1,560 @@
+[
+  {
+    "id": "rastr",
+    "name": "RastrNet",
+    "location": "Красноярск",
+    "download": "http://speedtest.rastrnet.ru/1GB.zip",
+    "upload": "http://speedtest.rastrnet.ru/speedtest/upload.php",
+    "source": "https://speedtest.rastrnet.ru/",
+    "country": "RU"
+  },
+  {
+    "id": "selectel",
+    "name": "Selectel",
+    "location": "Россия",
+    "download": "https://speedtest.selectel.ru/1GB",
+    "source": "https://selectel.ru/speedtest/",
+    "country": "RU",
+    "upload": null
+  },
+  {
+    "id": "wcloud",
+    "name": "WCloud",
+    "location": "Россия",
+    "download": "https://speedtest.wcloud.ru/1GB",
+    "source": "https://speedtest.wcloud.ru/",
+    "country": "RU",
+    "upload": null
+  },
+  {
+    "id": "true",
+    "name": "Truenetwork",
+    "location": "Новокузнецк",
+    "download": "https://mirror.truenetwork.ru/speedtest/1GiB",
+    "source": "https://speedtest.rastrnet.ru/",
+    "country": "RU",
+    "upload": null
+  },
+  {
+    "id": "eka",
+    "name": "EKACOD",
+    "location": "Екатеринбург",
+    "download": "https://lg.ekacod.ru/1000MB.test",
+    "source": "https://lg.ekacod.ru/",
+    "country": "RU",
+    "upload": null
+  },
+  {
+    "id": "serv",
+    "name": "serv.host",
+    "location": "Москва",
+    "download": "https://msk.lg.serv.host/files/1GB",
+    "source": "https://serv.host/speed-check/",
+    "country": "RU",
+    "upload": null
+  },
+  {
+    "id": "edis-msk",
+    "name": "EDIS",
+    "location": "Москва",
+    "download": "https://ru.edisglobal.com/1000MB.test",
+    "source": "https://ru.edisglobal.com/",
+    "country": "RU",
+    "upload": null
+  },
+  {
+    "id": "edis-spb",
+    "name": "EDIS",
+    "location": "Санкт-Петербург",
+    "download": "https://rusp.edisglobal.com/1000MB.test",
+    "source": "https://rusp.edisglobal.com/",
+    "country": "RU",
+    "upload": null
+  },
+  {
+    "id": "profit-msk",
+    "name": "ProfitServer",
+    "location": "Москва",
+    "download": "https://b250dc701ca686615a7c463b29b7f8ed.ip.looking.house/100.mb",
+    "source": "https://profitserver.net/datacenters/",
+    "country": "RU",
+    "upload": null
+  },
+  {
+    "id": "profit-chk",
+    "name": "ProfitServer",
+    "location": "Челябинск",
+    "download": "https://fa9b5207f1aa299046b3af5e5790098b.ip.looking.house/100.mb",
+    "source": "https://profitserver.net/datacenters/",
+    "country": "RU",
+    "upload": null
+  },
+  {
+    "id": "eserver",
+    "name": "eServer",
+    "location": "Москва",
+    "download": "https://lg.ru.eserver.net/test/1GB.bin",
+    "source": "https://www.eserver.ru/cart.php?gid=18&language=spanish",
+    "country": "RU",
+    "upload": null
+  },
+  {
+    "id": "virty",
+    "name": "Virty",
+    "location": "Санкт-Петербург",
+    "download": "http://lg.spb.virty.io/1000MB.test",
+    "source": "https://virty.io/ru/docs/dc/",
+    "country": "RU",
+    "upload": null
+  },
+  {
+    "id": "gb-12",
+    "name": "EDIS Global",
+    "location": "London · City",
+    "country": "GB",
+    "download": "https://uk.edisglobal.com/1000MB.test",
+    "source": "https://uk.edisglobal.com/",
+    "upload": null
+  },
+  {
+    "id": "gb-13",
+    "name": "EDIS Global",
+    "location": "London · Docklands",
+    "country": "GB",
+    "download": "https://uklnd.edisglobal.com/1000MB.test",
+    "source": "https://uklnd.edisglobal.com/",
+    "upload": null
+  },
+  {
+    "id": "fr-14",
+    "name": "EDIS Global",
+    "location": "Paris",
+    "country": "FR",
+    "download": "https://fr.edisglobal.com/1000MB.test",
+    "source": "https://fr.edisglobal.com/",
+    "upload": null
+  },
+  {
+    "id": "de-15",
+    "name": "EDIS Global",
+    "location": "Frankfurt",
+    "country": "DE",
+    "download": "https://de.edisglobal.com/1000MB.test",
+    "source": "https://de.edisglobal.com/",
+    "upload": null
+  },
+  {
+    "id": "es-16",
+    "name": "EDIS Global",
+    "location": "Seville",
+    "country": "ES",
+    "download": "https://es.edisglobal.com/1000MB.test",
+    "source": "https://es.edisglobal.com/",
+    "upload": null
+  },
+  {
+    "id": "us-17",
+    "name": "EDIS Global",
+    "location": "New York",
+    "country": "US",
+    "download": "https://us.edisglobal.com/1000MB.test",
+    "source": "https://us.edisglobal.com/",
+    "upload": null
+  },
+  {
+    "id": "us-18",
+    "name": "EDIS Global",
+    "location": "Los Angeles",
+    "country": "US",
+    "download": "https://uslax.edisglobal.com/1000MB.test",
+    "source": "https://uslax.edisglobal.com/",
+    "upload": null
+  },
+  {
+    "id": "us-19",
+    "name": "EDIS Global",
+    "location": "Miami",
+    "country": "US",
+    "download": "https://usmia.edisglobal.com/1000MB.test",
+    "source": "https://usmia.edisglobal.com/",
+    "upload": null
+  },
+  {
+    "id": "gb-20",
+    "name": "JustHost",
+    "location": "London",
+    "country": "GB",
+    "download": "http://91.149.202.91/1000MB.test",
+    "source": "https://justhost.asia/tr/article/looking_glass",
+    "upload": null
+  },
+  {
+    "id": "fr-21",
+    "name": "JustHost",
+    "location": "Paris",
+    "country": "FR",
+    "download": "http://185.143.222.48/1000MB.test",
+    "source": "https://justhost.asia/tr/article/looking_glass",
+    "upload": null
+  },
+  {
+    "id": "de-22",
+    "name": "JustHost",
+    "location": "Frankfurt",
+    "country": "DE",
+    "download": "http://91.149.223.204/1000MB.test",
+    "source": "https://justhost.asia/tr/article/looking_glass",
+    "upload": null
+  },
+  {
+    "id": "es-23",
+    "name": "JustHost",
+    "location": "Madrid",
+    "country": "ES",
+    "download": "http://91.149.242.38/1000MB.test",
+    "source": "https://justhost.asia/tr/article/looking_glass",
+    "upload": null
+  },
+  {
+    "id": "gb-24",
+    "name": "Clouvider",
+    "location": "London",
+    "country": "GB",
+    "download": "https://lon.speedtest.clouvider.net/1000MB.bin",
+    "source": "https://lon.speedtest.clouvider.net/",
+    "upload": null
+  },
+  {
+    "id": "de-25",
+    "name": "Clouvider",
+    "location": "Frankfurt",
+    "country": "DE",
+    "download": "https://fra.speedtest.clouvider.net/1000MB.bin",
+    "source": "https://fra.speedtest.clouvider.net/",
+    "upload": null
+  },
+  {
+    "id": "us-26",
+    "name": "Clouvider",
+    "location": "New York",
+    "country": "US",
+    "download": "https://nyc.speedtest.clouvider.net/1000MB.bin",
+    "source": "https://nyc.speedtest.clouvider.net/",
+    "upload": null
+  },
+  {
+    "id": "us-27",
+    "name": "Clouvider",
+    "location": "Los Angeles",
+    "country": "US",
+    "download": "https://la.speedtest.clouvider.net/1000MB.bin",
+    "source": "https://la.speedtest.clouvider.net/",
+    "upload": null
+  },
+  {
+    "id": "us-28",
+    "name": "Clouvider",
+    "location": "Atlanta",
+    "country": "US",
+    "download": "https://atl.speedtest.clouvider.net/1000MB.bin",
+    "source": "https://atl.speedtest.clouvider.net/",
+    "upload": null
+  },
+  {
+    "id": "gb-29",
+    "name": "OVHcloud",
+    "location": "Erith",
+    "country": "GB",
+    "download": "https://eri.proof.ovh.net/files/1Gb.dat",
+    "source": "https://eri.proof.ovh.net/files/",
+    "upload": null
+  },
+  {
+    "id": "fr-30",
+    "name": "OVHcloud",
+    "location": "Roubaix",
+    "country": "FR",
+    "download": "https://rbx.proof.ovh.net/files/1Gb.dat",
+    "source": "https://rbx.proof.ovh.net/files/",
+    "upload": null
+  },
+  {
+    "id": "fr-31",
+    "name": "OVHcloud",
+    "location": "Strasbourg",
+    "country": "FR",
+    "download": "https://sbg.proof.ovh.net/files/1Gb.dat",
+    "source": "https://sbg.proof.ovh.net/files/",
+    "upload": null
+  },
+  {
+    "id": "fr-32",
+    "name": "OVHcloud",
+    "location": "Gravelines",
+    "country": "FR",
+    "download": "https://gra.proof.ovh.net/files/1Gb.dat",
+    "source": "https://gra.proof.ovh.net/files/",
+    "upload": null
+  },
+  {
+    "id": "us-33",
+    "name": "OVHcloud",
+    "location": "Hillsboro",
+    "country": "US",
+    "download": "https://hil.proof.ovh.us/files/1Gb.dat",
+    "source": "https://hil.proof.ovh.us/files/",
+    "upload": null
+  },
+  {
+    "id": "us-34",
+    "name": "OVHcloud",
+    "location": "Vint Hill",
+    "country": "US",
+    "download": "https://vin.proof.ovh.us/files/1Gb.dat",
+    "source": "https://vin.proof.ovh.us/files/",
+    "upload": null
+  },
+  {
+    "id": "gb-35",
+    "name": "Vultr",
+    "location": "London",
+    "country": "GB",
+    "download": "https://lon-gb-ping.vultr.com/vultr.com.1000MB.bin",
+    "source": "https://lon-gb-ping.vultr.com/",
+    "upload": null
+  },
+  {
+    "id": "fr-36",
+    "name": "Vultr",
+    "location": "Paris",
+    "country": "FR",
+    "download": "https://par-fr-ping.vultr.com/vultr.com.1000MB.bin",
+    "source": "https://par-fr-ping.vultr.com/",
+    "upload": null
+  },
+  {
+    "id": "de-37",
+    "name": "Vultr",
+    "location": "Frankfurt",
+    "country": "DE",
+    "download": "https://fra-de-ping.vultr.com/vultr.com.1000MB.bin",
+    "source": "https://fra-de-ping.vultr.com/",
+    "upload": null
+  },
+  {
+    "id": "es-38",
+    "name": "Vultr",
+    "location": "Madrid",
+    "country": "ES",
+    "download": "https://mad-es-ping.vultr.com/vultr.com.1000MB.bin",
+    "source": "https://mad-es-ping.vultr.com/",
+    "upload": null
+  },
+  {
+    "id": "gb-39",
+    "name": "Akamai / Linode",
+    "location": "London",
+    "country": "GB",
+    "download": "http://speedtest.london.linode.com/100MB-london.bin",
+    "source": "http://speedtest.london.linode.com/",
+    "upload": null
+  },
+  {
+    "id": "fr-40",
+    "name": "Akamai / Linode",
+    "location": "Paris",
+    "country": "FR",
+    "download": "http://speedtest.paris.linode.com/100MB-paris.bin",
+    "source": "http://speedtest.paris.linode.com/",
+    "upload": null
+  },
+  {
+    "id": "de-41",
+    "name": "Akamai / Linode",
+    "location": "Frankfurt",
+    "country": "DE",
+    "download": "http://speedtest.frankfurt.linode.com/100MB-frankfurt.bin",
+    "source": "http://speedtest.frankfurt.linode.com/",
+    "upload": null
+  },
+  {
+    "id": "es-42",
+    "name": "Akamai / Linode",
+    "location": "Madrid",
+    "country": "ES",
+    "download": "http://speedtest.madrid.linode.com/100MB-madrid.bin",
+    "source": "http://speedtest.madrid.linode.com/",
+    "upload": null
+  },
+  {
+    "id": "us-43",
+    "name": "Akamai / Linode",
+    "location": "Newark",
+    "country": "US",
+    "download": "http://speedtest.newark.linode.com/100MB-newark.bin",
+    "source": "http://speedtest.newark.linode.com/",
+    "upload": null
+  },
+  {
+    "id": "de-44",
+    "name": "Hetzner",
+    "location": "Falkenstein",
+    "country": "DE",
+    "download": "https://fsn1-speed.hetzner.com/1GB.bin",
+    "source": "https://fsn1-speed.hetzner.com/",
+    "upload": null
+  },
+  {
+    "id": "de-45",
+    "name": "Hetzner",
+    "location": "Nuremberg",
+    "country": "DE",
+    "download": "https://nbg1-speed.hetzner.com/1GB.bin",
+    "source": "https://nbg1-speed.hetzner.com/",
+    "upload": null
+  },
+  {
+    "id": "de-46",
+    "name": "DeinServerHost",
+    "location": "Frankfurt",
+    "country": "DE",
+    "download": "https://lg.deinserverhost.de/1GB.test",
+    "source": "https://lg.deinserverhost.de/",
+    "upload": null
+  },
+  {
+    "id": "de-47",
+    "name": "Leaseweb",
+    "location": "Frankfurt",
+    "country": "DE",
+    "download": "https://speedtest.fra1.de.leaseweb.net/1000mb.bin",
+    "source": "https://speedtest.fra1.de.leaseweb.net/",
+    "upload": null
+  },
+  {
+    "id": "gb-48",
+    "name": "ThinkBroadband",
+    "location": "United Kingdom",
+    "country": "GB",
+    "download": "https://ipv4.download.thinkbroadband.com/1GB.zip",
+    "source": "https://www.thinkbroadband.com/download",
+    "upload": null
+  },
+  {
+    "id": "gb-49",
+    "name": "EUGameHost",
+    "location": "Norfolk",
+    "country": "GB",
+    "download": "https://lg.eugamehost.com/files/1G.file",
+    "source": "https://lg.eugamehost.com/files/",
+    "upload": null
+  },
+  {
+    "id": "gb-50",
+    "name": "Psychz Networks",
+    "location": "London",
+    "country": "GB",
+    "download": "https://lg.lon.psychz.net/200MB.test",
+    "source": "https://lg.lon.psychz.net/",
+    "upload": null
+  },
+  {
+    "id": "fr-51",
+    "name": "Scaleway",
+    "location": "Paris",
+    "country": "FR",
+    "download": "http://ping.online.net/1000Mo.dat",
+    "source": "https://ping.online.net/",
+    "upload": null
+  },
+  {
+    "id": "fr-52",
+    "name": "Scaleway",
+    "location": "Paris · Scaleway",
+    "country": "FR",
+    "download": "http://ping-90ms.online.net/1000Mo.dat",
+    "source": "https://www.scaleway.com/en/docs/faq/",
+    "upload": null
+  },
+  {
+    "id": "es-53",
+    "name": "ColdHosting",
+    "location": "Barcelona",
+    "country": "ES",
+    "download": "https://lg.coldhosting.es/files/1G.file",
+    "source": "https://lg.coldhosting.es/files/",
+    "upload": null
+  },
+  {
+    "id": "es-54",
+    "name": "OneProvider",
+    "location": "Barcelona",
+    "country": "ES",
+    "download": "https://lg-es-bcn.oneprovider.net/1000mb.bin",
+    "source": "https://lg-es-bcn.oneprovider.net/",
+    "upload": null
+  },
+  {
+    "id": "es-55",
+    "name": "Hostealo",
+    "location": "Madrid",
+    "country": "ES",
+    "download": "https://lg-madrid.hostealo.es/1GB.bin",
+    "source": "https://lg-frankfurt.hostealo.es/",
+    "upload": null
+  },
+  {
+    "id": "es-56",
+    "name": "iFog",
+    "location": "Barcelona",
+    "country": "ES",
+    "download": "https://lg.bcn.fognet.ch/100MB.test",
+    "source": "https://lg.bcn.fognet.ch/",
+    "upload": null
+  },
+  {
+    "id": "es-57",
+    "name": "Psychz Networks",
+    "location": "Barcelona",
+    "country": "ES",
+    "download": "https://lg.bcn.psychz.net/200MB.test",
+    "source": "https://lg.bcn.psychz.net/",
+    "upload": null
+  },
+  {
+    "id": "es-58",
+    "name": "FDC Servers",
+    "location": "Madrid",
+    "country": "ES",
+    "download": "http://lg-mad.fdcservers.net/100MBtest.zip",
+    "source": "https://fdcservers.net/locations",
+    "upload": null
+  },
+  {
+    "id": "fr-60",
+    "name": "FDC Servers",
+    "location": "Paris",
+    "country": "FR",
+    "download": "http://lg-pa10.fdcservers.net/100MBtest.zip",
+    "source": "https://fdcservers.net/locations",
+    "upload": null
+  },
+  {
+    "id": "us-61",
+    "name": "Hetzner",
+    "location": "Ashburn",
+    "country": "US",
+    "download": "https://ash-speed.hetzner.com/1GB.bin",
+    "source": "https://ash-speed.hetzner.com/",
+    "upload": null
+  },
+  {
+    "id": "de-fdc",
+    "name": "FDC Servers",
+    "location": "Frankfurt",
+    "country": "DE",
+    "download": "http://lg-fr8.fdcservers.net/100MBtest.zip",
+    "upload": null,
+    "source": "https://fdcservers.net/locations"
+  }
+]
