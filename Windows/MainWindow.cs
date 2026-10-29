@@ -22,7 +22,7 @@ public sealed class MainWindow:Window {
     double DownLimit=>Parse(downInput.Text);double UpLimit=>Parse(upInput.Text);
     static double Parse(string s)=>double.TryParse(s.Replace(',','.'),System.Globalization.NumberStyles.Float,System.Globalization.CultureInfo.InvariantCulture,out var n)&&double.IsFinite(n)?n:-1;
     static Brush BackgroundColor=new SolidColorBrush(Color.FromRgb(15,13,25)),PanelColor=new SolidColorBrush(Color.FromRgb(31,27,48));
-    public MainWindow(){Title="Internet Pulse · 1.7.0";Width=1120;Height=950;MinWidth=900;MinHeight=650;Background=BackgroundColor;Foreground=Brushes.White;FontFamily=new("Segoe UI");FontSize=14;I18n.Code=store.Value.Language;
+    public MainWindow(){Title="Internet Pulse · 1.7.0";Width=1120;Height=950;MinWidth=1000;MinHeight=650;Background=BackgroundColor;Foreground=Brushes.White;FontFamily=new("Segoe UI");FontSize=14;I18n.Code=store.Value.Language;
         servers=JsonSerializer.Deserialize<List<Server>>(File.ReadAllText(Path.Combine(AppContext.BaseDirectory,"Resources","Servers.json")))!;
         Build();timer.Tick+=async(_,_)=>{Tick();if(store.Value.Duration>0&&elapsed.Elapsed.TotalMinutes>=store.Value.Duration)await Stop(true);};Closing+=ClosingWindow;
     }
@@ -35,7 +35,7 @@ public sealed class MainWindow:Window {
     CheckBox Check(string name,bool value)=>new(){Content=L(name),IsChecked=value,Margin=new Thickness(0,8,20,8),VerticalContentAlignment=VerticalAlignment.Center,Foreground=Brushes.White};
     void Build(){
         root=new(){Margin=new Thickness(30)};Content=new ScrollViewer{Content=root,VerticalScrollBarVisibility=ScrollBarVisibility.Auto};
-        var header=Row();var brand=new StackPanel();brand.Children.Add(Text("INTERNET PULSE",13,TrafficGraph.Mint));brand.Children.Add(Text(L("Бесконечный Speedtest"),32));header.Children.Add(brand);status=Text(L("Готов к тесту"),15,TrafficGraph.Mint);status.Margin=new Thickness(32,0,0,0);header.Children.Add(status);root.Children.Add(header);
+        var header=Row();var brand=new StackPanel();brand.Children.Add(Text("INTERNET PULSE · 1.7.0",13,TrafficGraph.Mint));brand.Children.Add(Text(L("Бесконечный Speedtest"),32));header.Children.Add(brand);status=Text(L("Готов к тесту"),15,TrafficGraph.Mint);status.Margin=new Thickness(32,0,0,0);header.Children.Add(status);root.Children.Add(header);
         var speedGrid=new Grid{Margin=new Thickness(0,18,0,18)};speedGrid.ColumnDefinitions.Add(new());speedGrid.ColumnDefinitions.Add(new());
         for(int i=0;i<2;i++){var stack=new StackPanel();stack.Children.Add(Text(L(i==0?"Скачивание":"Отдача"),16,i==0?TrafficGraph.Mint:TrafficGraph.Purple));var speed=Text("0.0 "+L("Мбит/с"),52);speed.Margin=new Thickness(0,20,0,16);stack.Children.Add(speed);var total=Text(L("За этот тест")+" · "+I18n.Bytes(0),13,Brushes.LightGray);stack.Children.Add(total);var border=new Border{Child=stack,Padding=new Thickness(26),CornerRadius=new CornerRadius(24),Margin=new Thickness(i==0?0:8,0,i==0?8:0,0),Background=new LinearGradientBrush(i==0?Color.FromRgb(23,61,62):Color.FromRgb(51,34,78),Color.FromRgb(29,26,44),45)};Grid.SetColumn(border,i);speedGrid.Children.Add(border);if(i==0){downSpeed=speed;downTotal=total;}else{upSpeed=speed;upTotal=total;}}
         root.Children.Add(speedGrid);
@@ -69,5 +69,13 @@ public sealed class MainWindow:Window {
     [DllImport("kernel32.dll")]static extern uint SetThreadExecutionState(uint flags);
 }
 public static class Program {
-    [STAThread]public static void Main(string[] args){var app=new Application();var window=new MainWindow();if(args.Contains("--smoke-test")){window.Show();var timer=new DispatcherTimer{Interval=TimeSpan.FromSeconds(2)};timer.Tick+=(_,_)=>{timer.Stop();window.Close();};timer.Start();app.Run();}else app.Run(window);}
+    [STAThread]public static void Main(string[] args){
+        try {
+            var app=new Application();var window=new MainWindow();
+            if(args.Contains("--smoke-test")){
+                window.Show();var timer=new DispatcherTimer{Interval=TimeSpan.FromSeconds(2)};
+                timer.Tick+=(_,_)=>{timer.Stop();window.Close();};timer.Start();app.Run();
+            }else app.Run(window);
+        } catch(Exception error){File.WriteAllText(Path.Combine(AppContext.BaseDirectory,"startup-error.txt"),error.ToString());Environment.Exit(1);}
+    }
 }
