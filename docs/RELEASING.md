@@ -1,26 +1,18 @@
-# Выпуск новой версии
+# Release guide
 
-1. Внесите изменения и выберите номер по схеме `MAJOR.MINOR.PATCH`.
-   Исправления — PATCH, совместимые возможности — MINOR,
-   несовместимые изменения — MAJOR. Номер Windows-версии согласуем при разработке.
-2. Обновите `VERSION` и увеличьте `BUILD_NUMBER` на один. Эти файлы — источник
-   версии в приложении и имени ZIP; вручную менять Swift или Info.plist не нужно.
-3. Добавьте запись в `Resources/ReleaseHistory.json` (она видна в окне «Что нового»).
-   Обновите `CHANGELOG.md`, версию в README и создайте
-   `docs/releases/<версия>.md` с описанием выпуска.
-4. Выполните `./scripts/test.sh`, `./scripts/test-network.sh` и
-   `./scripts/package.sh`. Проверьте запуск, остановку, историю и подпись.
-5. Отправьте коммит и тег `v<версия>` в GitHub.
-6. Проверка обновлений в приложении использует последний опубликованный стабильный GitHub Release в `Ezhov777/InternetPulse`; один тег, черновик или prerelease обновлением не считается.
-7. Workflow проверит соответствие тега файлу VERSION, выполнит тесты,
-   соберёт ZIP и подготовит черновик релиза. Проверьте его и опубликуйте.
+1. Work in the InternetPulse repository only. Preserve `local.routerpulse.app` on macOS so existing preferences/history migrate. The displayed product name is always Internet Pulse.
+2. Update VERSION, BUILD_NUMBER, Windows project/manifest/assembly versions, release history, translated documentation and release notes together. Historical dates already present are retained.
+3. Run macOS model/update tests, loopback network tests and package script. The finished app depends only on system libraries; end users do not install developer tools.
+4. Run Windows core tests, self-contained x64 publish, WPF open/close smoke test and preview capture in Windows CI. A passing server-side Windows runner is not a hands-on Windows 11 UI check.
+5. Check all language screenshots visually: branding, version, grouping, units, labels, clipping and private data. Documentation media uses synthetic data and is labeled as a demo.
+6. Recheck server URLs with scripts/check-servers.py; use public provider test endpoints only, retain sources, reject HTML/empty files and TLS errors, and label upload support only when tested with the app’s protocol.
+7. Publish exact tested archives and SHA256 sums with a version tag. Never overwrite an existing release’s archive with different bytes under the same version. Close older apps before replacing them.
+8. Verify public downloads and the in-app manual update checker against the published GitHub release. Update the About text and translated READMEs to match actual availability.
 
-Вложения: `InternetPulse-<версия>-macos-arm64.zip` и `SHA256SUMS.txt`.
-Проверка архива: `shasum -a 256 -c SHA256SUMS.txt` в каталоге с обоими файлами.
+macOS: `./scripts/test.sh`, `./scripts/test-network.sh`, `./scripts/package.sh`.
 
-Текущая сборка подписывается локально ad hoc. Для Developer ID и нотариализации
-потребуется отдельная настройка Apple Developer; секретные материалы нельзя
-добавлять в Git. Автоматические workflow сейчас не используют сертификаты Apple.
+Windows: `dotnet run --project Windows.Tests -c Release`; `dotnet publish Windows -c Release -r win-x64 --self-contained true -o dist/windows`. Zip the whole output directory.
 
-Существующий идентификатор `local.routerpulse.app` сохранён для совместимости
-истории с локальными сборками. Его изменение требует отдельной миграции данных.
+The CI uses `macos-15-intel` to avoid the previously observed arm64 runner queue issue and cross-compiles the Apple Silicon bundle. This runner will need review before its published retirement. Windows uses the standard `windows-latest` runner, not a paid larger runner. No account/payment changes are required.
+
+Ad hoc macOS signatures do not expire after two weeks. Builds remain unnotarized; Windows archives are unsigned. Do not disable platform protections or invent signing credentials.
