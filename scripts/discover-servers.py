@@ -29,6 +29,19 @@ def check(s):
     except Exception as e:s['ok']=False;s['error']=str(e)
     return s
 with concurrent.futures.ThreadPoolExecutor(max_workers=8) as pool:results=list(pool.map(check,candidates))
+# Supplement scarce country catalogs with the provider-published Ookla directory.
+# Only download files; do not assume compatibility with an upload.php endpoint.
+for country,search in [("GB","United Kingdom"),("US","United States"),("DE","Germany"),("ES","Spain")]:
+    api="https://www.speedtest.net/api/js/servers?engine=js&limit=30&search="+urllib.parse.quote(search)
+    try:
+        with urllib.request.urlopen(request(api),timeout=15) as response: nodes=json.loads(response.read(524288))
+        items=[]
+        for node in nodes:
+            if node.get('cc')!=country:continue
+            url=urllib.parse.urljoin(node['url'],'random4000x4000.jpg')
+            items.append(dict(country=country,name=node.get('sponsor','Speedtest server'),location=node.get('name',''),source=api,url=url))
+        with concurrent.futures.ThreadPoolExecutor(max_workers=6) as pool:results.extend(pool.map(check,items[:20]))
+    except Exception as error:pages.append(dict(country=country,name='Ookla directory',source=api,error=str(error)))
 output=root/'build/server-discovery.json';output.write_text(json.dumps(dict(pages=pages,candidates=results),indent=2,ensure_ascii=False)+'\n')
 for s in results:
     if s['ok']:print('OK',s['country'],s['name'],s['url'])
