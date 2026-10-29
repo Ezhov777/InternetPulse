@@ -1,0 +1,45 @@
+name: Prepare draft release
+on:
+  push:
+    tags: ['v*']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  release:
+    if: startsWith(github.ref, 'refs/tags/v')
+    runs-on: macos-latest
+    timeout-minutes: 15
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Set script permissions
+        run: chmod +x build.sh scripts/*.sh
+      - name: Check tag against VERSION
+        env:
+          RELEASE_TAG: ${{ github.ref_name }}
+        run: |
+          release_version=$(tr -d '\r\n' < VERSION)
+          test "$RELEASE_TAG" = "v$release_version"
+          test -f "docs/releases/$release_version.md"
+      - run: ./scripts/test.sh
+      - run: ./scripts/test-network.sh
+      - run: ./scripts/package.sh
+      - name: Create draft with download and checksum
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          RELEASE_TAG: ${{ github.ref_name }}
+        run: |
+          release_version=$(tr -d '\r\n' < VERSION)
+          if gh release view "$RELEASE_TAG" > /dev/null 2>&1; then
+            echo "Release already exists; preserving existing assets."
+            exit 0
+          fi
+          gh release create "$RELEASE_TAG" \
+            --verify-tag --draft --title "InternetPulse $release_version" \
+            --notes-file "docs/releases/$release_version.md" \
+            "dist/InternetPulse-$release_version-macos-arm64.zip" dist/SHA256SUMS.txt
