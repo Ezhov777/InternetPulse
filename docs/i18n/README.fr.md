@@ -45,7 +45,7 @@ Commencez le débit maximal avec 4 connexions et comparez avec 1 et 8. Davantage
 
 Pour une charge contrôlée, désactivez le mode maximal. **100 Mbit/s avec 4 connexions signifie environ 100 Mbit/s au total par sens**, pas 400. Des pointes brèves sont possibles. Axe vertical : Mbit/s ; axe horizontal : temps. 80 Mbit/s correspondent à environ 10 Mo/s.
 
-Unités décimales : **1 To = 1000 Go ; 1 Go = 1000 Mo**. Nombres et dates suivent la langue choisie. Le sélecteur de langue est en bas de la fenêtre et s’utilise lorsque le test est arrêté.
+Unités décimales : **1 To = 1000 Go ; 1 Go = 1000 Mo**. Nombres et dates suivent la langue choisie. Le menu de langue avec le globe se trouve en haut à droite.
 
 ## Données et limites
 

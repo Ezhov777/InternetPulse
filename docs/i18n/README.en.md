@@ -45,7 +45,7 @@ Start maximum-speed tests with 4 connections and compare 1 and 8. More connectio
 
 For a controlled load, disable maximum mode and set limits. **100 Mbps with 4 connections means approximately 100 Mbps total per direction**, not 400. Brief bursts are possible. The chart’s vertical axis is Mbps and its horizontal axis is time; 80 Mbps is approximately 10 MB/s.
 
-Traffic uses decimal units: **1 TB = 1000 GB; 1 GB = 1000 MB**. Number/date formatting follows the selected language. Change language at the bottom of the window while stopped.
+Traffic uses decimal units: **1 TB = 1000 GB; 1 GB = 1000 MB**. Number/date formatting follows the selected language. Change language using the globe menu at the top right.
 
 ## Data and limitations
 

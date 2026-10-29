@@ -45,7 +45,7 @@ Starten Sie im Maximalmodus mit 4 Verbindungen und vergleichen Sie 1 und 8. Mehr
 
 Für kontrollierte Last deaktivieren Sie den Maximalmodus. **100 Mbit/s bei 4 Verbindungen bedeuten insgesamt etwa 100 Mbit/s je Richtung**, nicht 400. Kurze Spitzen sind möglich. Die vertikale Achse zeigt Mbit/s, die horizontale Zeit; 80 Mbit/s entsprechen etwa 10 MB/s.
 
-Dezimale Einheiten: **1 TB = 1000 GB; 1 GB = 1000 MB**. Zahlen und Daten folgen der gewählten Sprache. Die Sprache wird unten im Fenster geändert, während der Test gestoppt ist.
+Dezimale Einheiten: **1 TB = 1000 GB; 1 GB = 1000 MB**. Zahlen und Daten folgen der gewählten Sprache. Die Sprache wird über das Globusmenü oben rechts geändert.
 
 ## Daten und Grenzen
 

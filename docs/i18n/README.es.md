@@ -45,7 +45,7 @@ Empieza la prueba máxima con 4 conexiones y compara con 1 y 8. Más conexiones 
 
 Para una carga controlada, desactiva el modo máximo. **100 Mbps con 4 conexiones significa unos 100 Mbps totales por dirección**, no 400. Puede haber picos breves. El eje vertical muestra Mbps y el horizontal el tiempo; 80 Mbps equivalen aproximadamente a 10 MB/s.
 
-Unidades decimales: **1 TB = 1000 GB; 1 GB = 1000 MB**. Los números y fechas siguen el idioma elegido. Cambia el idioma al pie de la ventana con la prueba detenida.
+Unidades decimales: **1 TB = 1000 GB; 1 GB = 1000 MB**. Los números y fechas siguen el idioma elegido. Cambia el idioma en el menú del globo de la esquina superior derecha.
 
 ## Datos y limitaciones
 
