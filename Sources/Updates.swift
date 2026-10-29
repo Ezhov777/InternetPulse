@@ -38,7 +38,7 @@ final class UpdateChecker:ObservableObject {
     @Published private(set) var lastChecked:Date?
     let currentVersion:String
     private let fetch:(URLRequest) async throws -> (Data,URLResponse)
-    init(currentVersion:String=Bundle.main.object(forInfoDictionaryKey:"CFBundleShortVersionString") as? String ?? "Development",fetch:((URLRequest) async throws -> (Data,URLResponse))?=nil) {
+    init(currentVersion:String=BuildInfo.version,fetch:((URLRequest) async throws -> (Data,URLResponse))?=nil) {
         self.currentVersion=currentVersion;self.fetch=fetch ?? Self.fetchPublicRelease
     }
     private static func fetchPublicRelease(_ request:URLRequest) async throws -> (Data,URLResponse) {
@@ -53,7 +53,7 @@ final class UpdateChecker:ObservableObject {
     }
     @MainActor func check() async {
         guard state != .checking else {return}
-        guard let current=AppVersion(currentVersion) else {state = .failed("Не удалось определить версию приложения.");return}
+        guard let current=AppVersion(currentVersion) else {state = .failed(L("Не удалось определить версию приложения."));return}
         state = .checking
         var request=URLRequest(url:Self.api,cachePolicy:.reloadIgnoringLocalCacheData,timeoutInterval:15)
         request.setValue("application/vnd.github+json",forHTTPHeaderField:"Accept")
@@ -62,24 +62,24 @@ final class UpdateChecker:ObservableObject {
         do {
             let (data,response)=try await fetch(request)
             lastChecked=Date()
-            guard let http=response as? HTTPURLResponse else {state = .failed("GitHub вернул непонятный ответ.");return}
+            guard let http=response as? HTTPURLResponse else {state = .failed(L("GitHub вернул непонятный ответ."));return}
             switch http.statusCode {
             case 404:state = .noRelease;return
-            case 403,429:state = .failed("GitHub временно ограничил запросы. Повторите проверку позже.");return
+            case 403,429:state = .failed(L("GitHub временно ограничил запросы. Повторите проверку позже."));return
             case 200:break
-            default:state = .failed("Сервис обновлений недоступен (HTTP \(http.statusCode)). Попробуйте позже.");return
+            default:state = .failed(L("Сервис обновлений недоступен (HTTP {0}). Попробуйте позже.",String(http.statusCode)));return
             }
             struct Release:Decodable {let tag_name:String;let draft:Bool;let prerelease:Bool}
             let release=try JSONDecoder().decode(Release.self,from:data)
             guard !release.draft && !release.prerelease else {state = .noRelease;return}
-            guard let latest=AppVersion(release.tag_name) else {state = .failed("В опубликованном релизе указан непонятный номер версии.");return}
+            guard let latest=AppVersion(release.tag_name) else {state = .failed(L("В опубликованном релизе указан непонятный номер версии."));return}
             if latest>current {state = .available(release.tag_name)}
-            else if latest==current {state = .current("У вас установлена актуальная версия.")}
-            else {state = .current("Ваша версия новее последнего опубликованного релиза.")}
+            else if latest==current {state = .current(L("У вас установлена актуальная версия."))}
+            else {state = .current(L("Ваша версия новее последнего опубликованного релиза."))}
         } catch {
             if let error=error as? URLError,error.code == .notConnectedToInternet || error.code == .timedOut || error.code == .cannotFindHost || error.code == .cannotConnectToHost {
-                state = .failed("Не удалось связаться с GitHub. Проверьте интернет и повторите попытку.")
-            } else {state = .failed("Не удалось проверить обновления. Попробуйте позже.")}
+                state = .failed(L("Не удалось связаться с GitHub. Проверьте интернет и повторите попытку."))
+            } else {state = .failed(L("Не удалось проверить обновления. Попробуйте позже."))}
         }
     }
 }
@@ -90,19 +90,19 @@ struct UpdatesView:View {
     @Environment(\.openURL) private var openURL
     var title:String {
         switch checker.state {
-        case .idle,.checking:return "Проверяем обновления"
-        case .available(let version):return "Доступна версия \(version)"
-        case .current:return "Всё актуально"
-        case .noRelease:return "Релизов пока нет"
-        case .failed:return "Проверка не удалась"
+        case .idle,.checking:return L("Проверяем обновления")
+        case .available(let version):return L("Доступна версия {0}",version)
+        case .current:return L("Всё актуально")
+        case .noRelease:return L("Релизов пока нет")
+        case .failed:return L("Проверка не удалась")
         }
     }
     var detail:String {
         switch checker.state {
-        case .idle,.checking:return "Проверяем последний опубликованный выпуск в GitHub."
-        case .available:return "Новая версия доступна на GitHub. Откройте страницу релиза, чтобы посмотреть изменения и скачать приложение."
+        case .idle,.checking:return L("Проверяем последний опубликованный выпуск в GitHub.")
+        case .available:return L("Новая версия доступна на GitHub. Откройте страницу релиза, чтобы посмотреть изменения и скачать приложение.")
         case .current(let message):return message
-        case .noRelease:return "Публичный репозиторий или опубликованный релиз пока недоступен. После первого выпуска проверка начнёт находить обновления."
+        case .noRelease:return L("Публичный репозиторий или опубликованный релиз пока недоступен. После первого выпуска проверка начнёт находить обновления.")
         case .failed(let message):return message
         }
     }
@@ -118,17 +118,17 @@ struct UpdatesView:View {
             VStack(spacing:12) {
                 Text(title).font(.system(size:25,weight:.semibold)).tracking(-0.5).multilineTextAlignment(.center)
                 Text(detail).font(.system(size:13)).foregroundStyle(.secondary).multilineTextAlignment(.center).fixedSize(horizontal:false,vertical:true)
-                Text("Установлена версия \(checker.currentVersion)").font(.system(size:11,design:.monospaced)).foregroundStyle(.secondary).padding(.top,4)
+                Text(L("Установлена версия {0}",checker.currentVersion)).font(.system(size:11,design:.monospaced)).foregroundStyle(.secondary).padding(.top,4)
             }
             HStack(spacing:12) {
                 if case .available=checker.state {
-                    Button("Открыть релиз на GitHub") {openURL(UpdateChecker.releasePage)}.buttonStyle(.borderedProminent).tint(mint).foregroundStyle(.black)
+                    Button(L("Открыть релиз на GitHub")) {openURL(UpdateChecker.releasePage)}.buttonStyle(.borderedProminent).tint(mint).foregroundStyle(.black)
                 } else {
-                    Button("Проверить ещё раз") {Task {await checker.check()}}.buttonStyle(.borderedProminent).tint(mint).foregroundStyle(.black).disabled(checker.state == .checking)
+                    Button(L("Проверить ещё раз")) {Task {await checker.check()}}.buttonStyle(.borderedProminent).tint(mint).foregroundStyle(.black).disabled(checker.state == .checking)
                 }
-                Button("Закрыть") {dismiss()}.buttonStyle(.bordered)
+                Button(L("Закрыть")) {dismiss()}.buttonStyle(.bordered)
             }
-            Text("Проверка запускается только по вашей команде. Установка обновлений — вручную.").font(.system(size:10)).foregroundStyle(.secondary).multilineTextAlignment(.center)
+            Text(L("Проверка запускается только по вашей команде. Установка обновлений — вручную.")).font(.system(size:10)).foregroundStyle(.secondary).multilineTextAlignment(.center)
         }.padding(32).frame(width:500).background {
             ZStack {
                 Color(red:0.045,green:0.04,blue:0.085)

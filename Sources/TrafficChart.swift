@@ -23,28 +23,28 @@ struct TrafficChart:View {
         let target=end.addingTimeInterval(-seconds*(1-fraction))
         return visible.min{abs($0.date.timeIntervalSince(target))<abs($1.date.timeIntervalSince(target))}
     }
-    var period:String { seconds<60 ? "\(Int(seconds)) сек" : seconds<3600 ? "\(Int(seconds/60)) мин" : "\(String(format:"%g",seconds/3600)) ч" }
+    var period:String { seconds<60 ? L("{0} сек",String(Int(seconds))) : seconds<3600 ? L("{0} мин",String(Int(seconds/60))) : L("{0} ч",String(format:"%g",seconds/3600)) }
     var body:some View {
         VStack(alignment:.leading,spacing:20) {
             HStack(alignment:.firstTextBaseline) {
-                Text("Скорость соединения").font(.system(size:20,weight:.semibold)).tracking(-0.4)
+                Text(L("Скорость соединения")).font(.system(size:20,weight:.semibold)).tracking(-0.4)
                 Spacer()
                 HStack(spacing:4) {
                     zoomButton("minus",action:{seconds=min(86400,seconds*2)})
-                    Picker("Интервал графика",selection:$seconds) {
-                        Text("30 сек").tag(30.0);Text("1 мин").tag(60.0);Text("5 мин").tag(300.0)
-                        Text("15 мин").tag(900.0);Text("1 час").tag(3600.0);Text("24 часа").tag(86400.0)
+                    Picker(L("Интервал графика"),selection:$seconds) {
+                        Text(L("30 сек")).tag(30.0);Text(L("1 мин")).tag(60.0);Text(L("5 мин")).tag(300.0)
+                        Text(L("15 мин")).tag(900.0);Text(L("1 час")).tag(3600.0);Text(L("24 часа")).tag(86400.0)
                         if ![30.0,60,300,900,3600,86400].contains(seconds) {Text(period).tag(seconds)}
                     }.labelsHidden().pickerStyle(.menu).frame(width:110)
                     zoomButton("plus",action:{seconds=max(30,seconds/2)})
                 }.padding(5).background(.white.opacity(0.035),in:Capsule())
             }
             HStack(alignment:.bottom,spacing:28) {
-                metric("Скачивание",value:selected?.down,color:mint,symbol:"arrow.down")
-                metric("Отдача",value:selected?.up,color:blue,symbol:"arrow.up")
+                metric(L("Скачивание"),value:selected?.down,color:mint,symbol:"arrow.down")
+                metric(L("Отдача"),value:selected?.up,color:blue,symbol:"arrow.up")
                 Spacer()
                 VStack(alignment:.trailing,spacing:6) {
-                    Text(hover==nil ? "ПОСЛЕДНИЙ ЗАМЕР" : "ВЫБРАННЫЙ ЗАМЕР").font(.system(size:8,weight:.medium,design:.monospaced)).tracking(1).foregroundStyle(.secondary)
+                    Text(hover==nil ? L("ПОСЛЕДНИЙ ЗАМЕР") : L("ВЫБРАННЫЙ ЗАМЕР")).font(.system(size:8,weight:.medium,design:.monospaced)).tracking(1).foregroundStyle(.secondary)
                     Text(selected?.date.formatted(.dateTime.hour(.twoDigits(amPM:.omitted)).minute(.twoDigits).second(.twoDigits)) ?? "—")
                         .font(.system(size:12,design:.monospaced)).foregroundStyle(.secondary)
                 }
@@ -58,18 +58,18 @@ struct TrafficChart:View {
                     }
                 }
                 .background(GeometryReader { geometry in Color.clear.onAppear {chartWidth=geometry.size.width}.onChange(of:geometry.size.width) {_,value in chartWidth=value} })
-                .accessibilityLabel("График скорости: вертикальная ось — мегабиты в секунду, горизонтальная — время")
+                .accessibilityLabel(L("График скорости: вертикальная ось — мегабиты в секунду, горизонтальная — время"))
             HStack {
-                Label("Рекорды сессии",systemImage:"trophy").font(.system(size:11,weight:.medium)).foregroundStyle(.secondary)
-                Text("↓ \(String(format:"%.1f",locale:Locale(identifier:"ru_RU"),peakDown)) Мбит/с").foregroundStyle(mint)
-                Text("↑ \(String(format:"%.1f",locale:Locale(identifier:"ru_RU"),peakUp)) Мбит/с").foregroundStyle(blue)
+                Label(L("Рекорды сессии"),systemImage:"trophy").font(.system(size:11,weight:.medium)).foregroundStyle(.secondary)
+                Text("↓ \(TrafficFormat.speed(peakDown)) \(L("Мбит/с"))").foregroundStyle(mint)
+                Text("↑ \(TrafficFormat.speed(peakUp)) \(L("Мбит/с"))").foregroundStyle(blue)
                 Spacer()
-                Text("Максимум секундных замеров").foregroundStyle(.secondary)
+                Text(L("Максимум секундных замеров")).foregroundStyle(.secondary)
             }.font(.system(size:10,design:.monospaced))
             HStack {
-                Label("Наведите на график, чтобы увидеть замер",systemImage:"cursorarrow.rays").font(.system(size:10)).foregroundStyle(.secondary)
+                Label(L("Наведите на график, чтобы увидеть замер"),systemImage:"cursorarrow.rays").font(.system(size:10)).foregroundStyle(.secondary)
                 Spacer()
-                Text("Время теста  \(elapsed)").font(.system(size:10,design:.monospaced)).foregroundStyle(.secondary)
+                Text(L("Время теста  {0}",elapsed)).font(.system(size:10,design:.monospaced)).foregroundStyle(.secondary)
             }
         }.padding(24).modifier(GlassPanel())
     }
@@ -77,14 +77,14 @@ struct TrafficChart:View {
     func zoomButton(_ symbol:String,action:@escaping ()->Void)->some View {
         Button(action:action) {Image(systemName:symbol).font(.system(size:12,weight:.medium)).frame(width:28,height:28)}
             .buttonStyle(.plain).background(.white.opacity(0.04),in:Circle())
-            .help(symbol=="plus" ? "Приблизить график" : "Показать больший интервал")
+            .help(symbol=="plus" ? L("Приблизить график") : L("Показать больший интервал"))
     }
     func metric(_ title:String,value:Double?,color:Color,symbol:String)->some View {
         VStack(alignment:.leading,spacing:8) {
-            Label(title,systemImage:symbol).font(.system(size:11,weight:.medium)).foregroundStyle(color)
+            Label(L(title),systemImage:symbol).font(.system(size:11,weight:.medium)).foregroundStyle(color)
             HStack(alignment:.firstTextBaseline,spacing:6) {
-                Text(value.map{String(format:"%.1f",locale:Locale(identifier:"ru_RU"),$0)} ?? "—").font(.system(size:26,weight:.light,design:.rounded)).monospacedDigit().foregroundStyle(.white)
-                Text("Мбит/с").font(.system(size:10)).foregroundStyle(.secondary)
+                Text(value.map{TrafficFormat.speed($0)} ?? "—").font(.system(size:26,weight:.light,design:.rounded)).monospacedDigit().foregroundStyle(.white)
+                Text(L("Мбит/с")).font(.system(size:10)).foregroundStyle(.secondary)
             }
         }.frame(minWidth:135,alignment:.leading)
     }
@@ -103,13 +103,13 @@ struct ChartCanvas:View {
             let maximum=ChartScale.ceiling(for:samples.reduce(0){max($0,$1.down,$1.up)})
             let step=max(1,samples.count/1500)
             let points=samples.enumerated().filter{$0.offset%step==0 || $0.offset==samples.count-1}.map{$0.element}
-            context.draw(Text("Мбит/с").font(.system(size:10,weight:.medium)).foregroundColor(.white.opacity(0.5)),at:CGPoint(x:0,y:5),anchor:.topLeading)
+            context.draw(Text(L("Мбит/с")).font(.system(size:10,weight:.medium)).foregroundColor(.white.opacity(0.5)),at:CGPoint(x:0,y:5),anchor:.topLeading)
             for i in 0...4 {
                 let y=top+height*CGFloat(i)/4
                 var line=Path();line.move(to:CGPoint(x:left,y:y));line.addLine(to:CGPoint(x:size.width-right,y:y))
                 context.stroke(line,with:.color(.white.opacity(i==4 ? 0.12 : 0.045)),style:StrokeStyle(lineWidth:1,dash:i==4 ? [] : [3,5]))
                 let value=maximum*(1-Double(i)/4)
-                context.draw(Text(String(format:"%g",locale:Locale(identifier:"ru_RU"),value)).font(.system(size:10,design:.monospaced)).foregroundColor(.white.opacity(0.4)),at:CGPoint(x:left-12,y:y),anchor:.trailing)
+                context.draw(Text(String(format:"%g",locale:AppLanguage.shared.locale,value)).font(.system(size:10,design:.monospaced)).foregroundColor(.white.opacity(0.4)),at:CGPoint(x:left-12,y:y),anchor:.trailing)
             }
             for i in 0...4 {
                 let x=left+width*CGFloat(i)/4
@@ -144,7 +144,7 @@ struct ChartCanvas:View {
                 context.stroke(line,with:.color(.white.opacity(0.25)),style:StrokeStyle(lineWidth:1,dash:[3,4]))
             }
             if samples.count<2 {
-                context.draw(Text("Здесь появится скорость вашего соединения").font(.system(size:12)).foregroundColor(.white.opacity(0.35)),at:CGPoint(x:left+width/2,y:top+height/2))
+                context.draw(Text(L("Здесь появится скорость вашего соединения")).font(.system(size:12)).foregroundColor(.white.opacity(0.35)),at:CGPoint(x:left+width/2,y:top+height/2))
             }
         }
     }
