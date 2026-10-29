@@ -1,0 +1,13 @@
+Сервер	Расположение	Направления в InternetPulse	Скачивание	Отдача	Источник
+RastrNet	Красноярск	Скачивание и отдача	http://speedtest.rastrnet.ru/1GB.zip	http://speedtest.rastrnet.ru/speedtest/upload.php	https://speedtest.rastrnet.ru/
+Selectel	Россия	Только скачивание	https://speedtest.selectel.ru/1GB		https://selectel.ru/speedtest/
+WCloud	Россия	Только скачивание	https://speedtest.wcloud.ru/1GB		https://speedtest.wcloud.ru/
+Truenetwork	Новокузнецк	Только скачивание	https://mirror.truenetwork.ru/speedtest/1GiB		https://speedtest.rastrnet.ru/
+EKACOD	Екатеринбург	Только скачивание	https://lg.ekacod.ru/1000MB.test		https://lg.ekacod.ru/
+serv.host	Москва	Только скачивание	https://msk.lg.serv.host/files/1GB		https://serv.host/speed-check/
+EDIS	Москва	Только скачивание	https://ru.edisglobal.com/1000MB.test		https://ru.edisglobal.com/
+EDIS	Санкт-Петербург	Только скачивание	https://rusp.edisglobal.com/1000MB.test		https://rusp.edisglobal.com/
+ProfitServer	Москва	Только скачивание	https://b250dc701ca686615a7c463b29b7f8ed.ip.looking.house/100.mb		https://profitserver.net/datacenters/
+ProfitServer	Челябинск	Только скачивание	https://fa9b5207f1aa299046b3af5e5790098b.ip.looking.house/100.mb		https://profitserver.net/datacenters/
+eServer	Москва	Только скачивание	https://lg.ru.eserver.net/test/1GB.bin		https://www.eserver.ru/cart.php?gid=18&language=spanish
+Virty	Санкт-Петербург	Только скачивание	http://lg.spb.virty.io/1000MB.test		https://virty.io/ru/docs/dc/
