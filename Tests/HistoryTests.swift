@@ -2,6 +2,7 @@ import Foundation
 
 @main struct HistoryTests {
     static func main() {
+        AppLanguage.shared.code="ru"
         let suite="local.routerpulse.test.\(UUID().uuidString)"
         let defaults=UserDefaults(suiteName:suite)!
         defer { defaults.removePersistentDomain(forName:suite) }
@@ -16,13 +17,13 @@ import Foundation
         assert(m.dailyHistory[0].date==today)
         assert(m.dailyHistory[1].downloaded==4_000_000)
         assert(m.dailyHistory[1].uploaded==750_000)
-        m.historyUnit="ГБ";m.saveHistory()
+        m.historyUnit="GB";m.saveHistory()
         let restored=Monitor(defaults:defaults)
         assert(restored.dailyHistory.count==2)
-        assert(restored.historyUnit=="ГБ")
-        assert(restored.historyAmount(restored.dailyHistory[0].downloaded)=="1.00 ГБ")
-        restored.historyUnit="МБ"
-        assert(restored.historyAmount(4_000_000)=="4.00 МБ")
+        assert(restored.historyUnit=="GB")
+        assert(restored.historyAmount(restored.dailyHistory[0].downloaded)=="1,00 ГБ")
+        restored.historyUnit="MB"
+        assert(restored.historyAmount(4_000_000)=="4,00 МБ")
         restored.resetHistory()
         assert(Monitor(defaults:defaults).dailyHistory.isEmpty)
         restored.recordTraffic(downloaded:123,uploaded:456,at:today)
@@ -36,7 +37,16 @@ import Foundation
         assert(restored.clockText=="00:01:01")
         assert(restored.clockCaption=="ВРЕМЯ ТЕСТА")
         restored.running=false
-        assert(TestServer.all.count==12)
+        assert(TestServer.all.count>=59)
+        for country in ["GB","US","FR","DE","ES"] {assert((10...15).contains(TestServer.all.filter{$0.country==country}.count))}
+        for locale in ["ru_RU","en_GB","fr_FR","de_DE","es_ES"] {
+            let formatted=TrafficFormat.amount(30_232_170_000,unit:"MB",locale:Locale(identifier:locale))
+            assert(formatted.contains("30") && formatted.contains("232"))
+            assert(!formatted.contains("30232"))
+        }
+        assert(TrafficFormat.amount(1_000_000_000_000,unit:"TB",locale:Locale(identifier:"ru_RU"))=="1,00 ТБ")
+        defaults.set("ГБ",forKey:"historyUnit");assert(Monitor(defaults:defaults).historyUnit=="GB")
+
         assert(TestServer.all.filter{$0.upload != nil}.count==1)
         assert(ChartScale.ceiling(for:85)==100)
         assert(ChartScale.ceiling(for:65)==80)
