@@ -308,6 +308,21 @@ struct ContentView: View {
                         Text(L("Бесконечный Speedtest")).font(.system(size:26,weight:.semibold)).tracking(-0.8).foregroundStyle(.white).lineLimit(2).fixedSize(horizontal:false,vertical:true)
                     }
                     Spacer()
+                    VStack(alignment:.trailing,spacing:10) {
+                        Menu {
+                            ForEach(AppLanguage.choices,id:\.0) { code,name in
+                                Button {language.code=code} label: {
+                                    if language.code==code {Label(name,systemImage:"checkmark")} else {Text(name)}
+                                }
+                            }
+                        } label: {
+                            HStack(spacing:7) {
+                                Image(systemName:"globe")
+                                Text(AppLanguage.choices.first{$0.0==language.code}?.1 ?? "English")
+                                Image(systemName:"chevron.down").font(.system(size:8,weight:.semibold))
+                            }.font(.system(size:12,weight:.medium)).foregroundStyle(.white.opacity(0.85))
+                                .padding(.horizontal,12).padding(.vertical,7).background(.white.opacity(0.055),in:Capsule())
+                        }.menuStyle(.borderlessButton).menuIndicator(.hidden).fixedSize().accessibilityLabel(L("Язык")).disabled(model.stopping)
                     HStack(spacing:16) {
                         HStack(spacing:7) {
                             Circle().fill(model.stalled ? .orange : model.running ? mint : Color.secondary).frame(width:6,height:6)
@@ -320,6 +335,7 @@ struct ContentView: View {
                             Text(model.clockText).font(.system(size:22,weight:.medium,design:.monospaced)).monospacedDigit().foregroundStyle(model.running ? mint : .white)
                         }.frame(minWidth:86,alignment:.trailing)
                     }.padding(.horizontal,16).padding(.vertical,12).modifier(GlassPanel())
+                    }
                 }.padding(.top,4).padding(.bottom,10)
                 HStack(spacing:14) {
                     speed(L("Скачивание"),symbol:"arrow.down",value:model.down,total:model.downloaded,color:mint)
@@ -424,9 +440,7 @@ struct ContentView: View {
                     Text("Internet Pulse · "+L("Версия {0}",BuildInfo.version))
                         .font(.system(size:10,design:.monospaced)).foregroundStyle(.secondary)
                     Spacer()
-                    Picker(L("Язык"),selection:$language.code) {
-                        ForEach(AppLanguage.choices,id:\.0) { code,name in Text(name).tag(code) }
-                    }.labelsHidden().frame(width:110).disabled(model.running)
+
                     Button {activeSheet = .releaseNotes} label: {Label(L("Что нового"),systemImage:"sparkles").font(.system(size:11,weight:.medium))}.buttonStyle(.plain).foregroundStyle(mint)
                     Button {activeSheet = .updates} label: {Label(L("Проверить обновления"),systemImage:"arrow.triangle.2.circlepath").font(.system(size:11,weight:.medium))}.buttonStyle(.plain).foregroundStyle(mint).padding(.leading,12)
                 }
