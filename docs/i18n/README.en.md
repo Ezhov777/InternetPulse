@@ -13,6 +13,13 @@ macOS 14+ / Apple Silicon · Windows 11 / x64
 
 ![Internet Pulse · demo animation](../screenshots/chart-demo.gif)
 
+<details>
+<summary>Windows 11 interface</summary>
+
+![Internet Pulse · Windows 11](../screenshots/windows-en.png)
+
+</details>
+
 ## Why use it?
 
 A short speed test gives a momentary result. Internet Pulse keeps the connection busy for minutes, an hour or continuously. Spot speed drops, compare Wi-Fi with Ethernet and check different rooms or evening performance.
@@ -33,9 +40,11 @@ A short speed test gives a momentary result. Internet Pulse keeps the connection
 
 ## Download and run
 
-Get `InternetPulse-1.7.0-macos-arm64.zip` for Apple Silicon Macs running macOS 14 or newer. Unzip and move `InternetPulse.app` to Applications.
+[First launch on Mac: illustrated guide](../MAC_FIRST_LAUNCH.md#english).
 
-For Windows 11 x64, get `InternetPulse-1.7.0-win11-x64.zip`, extract the entire folder and run `InternetPulse.exe`. Keep its accompanying files together. The .NET runtime is included.
+Get `InternetPulse_1.7.0_macOS_arm64.zip` for Apple Silicon Macs running macOS 14 or newer. Unzip and move `InternetPulse.app` to Applications.
+
+For Windows 11 x64, get `InternetPulse_1.7.0_Windows11_x64.zip`, extract the entire folder and run `InternetPulse.exe`. Keep its accompanying files together. The .NET runtime is included.
 
 Close an older version before replacing it. Ready-made builds do not require Xcode, Developer Tools, Visual Studio or a separate .NET installation. The Mac build has an ad hoc signature without Apple notarization; the Windows build is not Authenticode-signed. Your OS may warn about an unknown publisher. Release assets include checksums. Automated Windows CI tests the engine and WPF startup; a separate hands-on Windows 11 check has not been performed.
 
@@ -56,6 +65,8 @@ Servers receive requests and see your IP address. No built-in analytics or histo
 Third-party server availability and throughput vary by network and time. Download-only labels mean no compatible HTTP PUT endpoint is configured, even if the provider offers another upload test on its website.
 
 ## Development
+
+For source downloaded from GitHub, first run `chmod +x build.sh scripts/*.sh`.
 
 Mac: `./scripts/test.sh`, `./scripts/test-network.sh`, `./scripts/package.sh`. Apple Command Line Tools are needed only to build from source.
 

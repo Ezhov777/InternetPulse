@@ -13,6 +13,13 @@ macOS 14+ / Apple Silicon · Windows 11 / x64
 
 ![Internet Pulse · demo animation](../screenshots/chart-demo.gif)
 
+<details>
+<summary>Interfaz de Windows 11 (en inglés)</summary>
+
+![Internet Pulse · Windows 11](../screenshots/windows-en.png)
+
+</details>
+
 ## ¿Para qué sirve?
 
 Una prueba corta muestra un resultado puntual. Internet Pulse mantiene la carga durante minutos, una hora o sin límite. Detecta caídas de velocidad y compara Wi-Fi con Ethernet, distintas habitaciones o el rendimiento por la noche.
@@ -33,9 +40,11 @@ Una prueba corta muestra un resultado puntual. Internet Pulse mantiene la carga 
 
 ## Descargar y ejecutar
 
-Para macOS 14+ con Apple Silicon, descarga `InternetPulse-1.7.0-macos-arm64.zip`, descomprime y mueve `InternetPulse.app` a Aplicaciones.
+[Primer inicio en Mac: guía ilustrada](../MAC_FIRST_LAUNCH.md#español).
 
-Para Windows 11 x64, descarga `InternetPulse-1.7.0-win11-x64.zip`, extrae toda la carpeta y ejecuta `InternetPulse.exe`. Mantén juntos los archivos; se incluye el entorno .NET.
+Para macOS 14+ con Apple Silicon, descarga `InternetPulse_1.7.0_macOS_arm64.zip`, descomprime y mueve `InternetPulse.app` a Aplicaciones.
+
+Para Windows 11 x64, descarga `InternetPulse_1.7.0_Windows11_x64.zip`, extrae toda la carpeta y ejecuta `InternetPulse.exe`. Mantén juntos los archivos; se incluye el entorno .NET.
 
 Cierra la versión anterior antes de sustituirla. Las aplicaciones preparadas no necesitan Xcode, Developer Tools, Visual Studio ni instalar .NET por separado. La versión Mac tiene firma ad hoc sin notarización de Apple; la de Windows no tiene firma Authenticode. El sistema puede avisar de un editor desconocido. La versión publicada incluye sumas de comprobación. La CI de Windows verifica el motor y el inicio de WPF; no se ha realizado una comprobación manual independiente en Windows 11.
 
@@ -56,6 +65,8 @@ Los servidores reciben solicitudes y ven tu IP. No hay analítica integrada ni e
 La disponibilidad y velocidad de los servidores externos varían. «Solo descarga» indica que no se ha configurado una dirección HTTP PUT compatible, aunque la web del proveedor ofrezca otra prueba de subida.
 
 ## Desarrollo
+
+Para el código descargado de GitHub, ejecuta primero `chmod +x build.sh scripts/*.sh`.
 
 Mac: `./scripts/test.sh`, `./scripts/test-network.sh`, `./scripts/package.sh`. Apple Command Line Tools solo se necesitan para compilar.
 

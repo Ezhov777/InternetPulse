@@ -13,6 +13,13 @@ macOS 14+ / Apple Silicon · Windows 11 / x64
 
 ![Internet Pulse · demo animation](../screenshots/chart-demo.gif)
 
+<details>
+<summary>Interface Windows 11 (en anglais)</summary>
+
+![Internet Pulse · Windows 11](../screenshots/windows-en.png)
+
+</details>
+
 ## À quoi sert-il ?
 
 Un test bref donne un résultat ponctuel. Internet Pulse maintient la charge quelques minutes, une heure ou en continu. Repérez les baisses de débit, comparez Wi-Fi et Ethernet, différentes pièces ou les performances du soir.
@@ -33,9 +40,11 @@ Un test bref donne un résultat ponctuel. Internet Pulse maintient la charge que
 
 ## Télécharger et lancer
 
-Pour macOS 14+ sur Apple Silicon, prenez `InternetPulse-1.7.0-macos-arm64.zip`, décompressez-le et déplacez `InternetPulse.app` dans Applications.
+[Premier lancement sur Mac : guide illustré](../MAC_FIRST_LAUNCH.md#français).
 
-Pour Windows 11 x64, prenez `InternetPulse-1.7.0-win11-x64.zip`, extrayez tout le dossier et lancez `InternetPulse.exe`. Gardez les fichiers ensemble ; l’environnement .NET est inclus.
+Pour macOS 14+ sur Apple Silicon, prenez `InternetPulse_1.7.0_macOS_arm64.zip`, décompressez-le et déplacez `InternetPulse.app` dans Applications.
+
+Pour Windows 11 x64, prenez `InternetPulse_1.7.0_Windows11_x64.zip`, extrayez tout le dossier et lancez `InternetPulse.exe`. Gardez les fichiers ensemble ; l’environnement .NET est inclus.
 
 Fermez l’ancienne version avant de la remplacer. Les applications prêtes à l’emploi ne nécessitent ni Xcode, ni Developer Tools, ni Visual Studio, ni installation séparée de .NET. La version Mac est signée ad hoc, sans notarisation Apple ; la version Windows n’a pas de signature Authenticode. Le système peut avertir que l’éditeur est inconnu. Des sommes de contrôle sont jointes au téléchargement. La CI Windows vérifie le moteur et l’ouverture de WPF ; aucune vérification manuelle distincte sur Windows 11 n’a été effectuée.
 
@@ -56,6 +65,8 @@ Les serveurs voient votre adresse IP. Aucune analyse intégrée ni transmission 
 Disponibilité et débit des serveurs tiers varient. « Téléchargement seul » indique qu’aucune adresse HTTP PUT compatible n’est configurée, même si le site du fournisseur propose un autre test d’envoi.
 
 ## Développement
+
+Pour les sources téléchargées depuis GitHub, exécutez d’abord `chmod +x build.sh scripts/*.sh`.
 
 Mac : `./scripts/test.sh`, `./scripts/test-network.sh`, `./scripts/package.sh`. Les outils Apple Command Line Tools servent uniquement à compiler.
 

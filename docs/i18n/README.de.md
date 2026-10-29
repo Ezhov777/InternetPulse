@@ -13,6 +13,13 @@ macOS 14+ / Apple Silicon · Windows 11 / x64
 
 ![Internet Pulse · demo animation](../screenshots/chart-demo.gif)
 
+<details>
+<summary>Windows-11-Oberfläche (Englisch)</summary>
+
+![Internet Pulse · Windows 11](../screenshots/windows-en.png)
+
+</details>
+
 ## Wozu dient die App?
 
 Ein kurzer Speedtest liefert eine Momentaufnahme. Internet Pulse belastet die Verbindung minutenlang, eine Stunde oder unbegrenzt. Erkennen Sie Geschwindigkeitseinbrüche und vergleichen Sie WLAN mit Ethernet, verschiedene Räume oder die Leistung am Abend.
@@ -33,9 +40,11 @@ Ein kurzer Speedtest liefert eine Momentaufnahme. Internet Pulse belastet die Ve
 
 ## Herunterladen und starten
 
-Für macOS 14+ auf Apple Silicon laden Sie `InternetPulse-1.7.0-macos-arm64.zip`, entpacken das Archiv und verschieben `InternetPulse.app` nach Programme.
+[Erster Start auf dem Mac: bebilderte Anleitung](../MAC_FIRST_LAUNCH.md#deutsch).
 
-Für Windows 11 x64 laden Sie `InternetPulse-1.7.0-win11-x64.zip`, entpacken den gesamten Ordner und starten `InternetPulse.exe`. Alle Dateien müssen zusammenbleiben; die .NET-Laufzeit ist enthalten.
+Für macOS 14+ auf Apple Silicon laden Sie `InternetPulse_1.7.0_macOS_arm64.zip`, entpacken das Archiv und verschieben `InternetPulse.app` nach Programme.
+
+Für Windows 11 x64 laden Sie `InternetPulse_1.7.0_Windows11_x64.zip`, entpacken den gesamten Ordner und starten `InternetPulse.exe`. Alle Dateien müssen zusammenbleiben; die .NET-Laufzeit ist enthalten.
 
 Schließen Sie die alte Version vor dem Ersetzen. Fertige Builds benötigen weder Xcode, Developer Tools, Visual Studio noch eine separate .NET-Installation. Der Mac-Build ist ad hoc signiert, ohne Apple-Notarisierung; der Windows-Build hat keine Authenticode-Signatur. Das System kann vor einem unbekannten Herausgeber warnen. Prüfsummen liegen im Release bei. Windows-CI prüft Netzwerkfunktionen und den WPF-Start; eine gesonderte manuelle Prüfung auf Windows 11 wurde nicht durchgeführt.
 
@@ -56,6 +65,8 @@ Server sehen Ihre IP-Adresse. Es gibt keine integrierte Analyse und keine Übert
 Verfügbarkeit und Leistung externer Server ändern sich. „Nur Download“ bedeutet, dass kein kompatibler HTTP-PUT-Endpunkt konfiguriert ist, auch wenn die Anbieterwebsite einen anderen Uploadtest anbietet.
 
 ## Entwicklung
+
+Führen Sie für von GitHub heruntergeladene Quellen zuerst `chmod +x build.sh scripts/*.sh` aus.
 
 Mac: `./scripts/test.sh`, `./scripts/test-network.sh`, `./scripts/package.sh`. Apple Command Line Tools werden nur zum Kompilieren benötigt.
 
