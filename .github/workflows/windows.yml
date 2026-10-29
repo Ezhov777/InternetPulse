@@ -32,8 +32,8 @@ jobs:
         shell: pwsh
         run: |
           $version = (Get-Content VERSION -Raw).Trim()
-          Compress-Archive -Path dist/windows/* -DestinationPath "dist/InternetPulse-$version-win11-x64.zip"
-          $asset = Get-Item "dist/InternetPulse-$version-win11-x64.zip"
+          Compress-Archive -Path dist/windows/* -DestinationPath "dist/InternetPulse_${version}_Windows11_x64.zip"
+          $asset = Get-Item "dist/InternetPulse_${version}_Windows11_x64.zip"
           $hash = (Get-FileHash $asset.FullName -Algorithm SHA256).Hash.ToLower()
           "$hash  $($asset.Name)" | Set-Content -Encoding utf8 dist/SHA256SUMS-windows.txt
       - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9

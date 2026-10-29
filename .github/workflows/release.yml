@@ -42,4 +42,4 @@ jobs:
           gh release create "$RELEASE_TAG" \
             --verify-tag --draft --title "InternetPulse $release_version" \
             --notes-file "docs/releases/$release_version.md" \
-            "dist/InternetPulse-$release_version-macos-arm64.zip" dist/SHA256SUMS.txt
+            "dist/InternetPulse_${release_version}_macOS_arm64.zip" dist/SHA256SUMS.txt
