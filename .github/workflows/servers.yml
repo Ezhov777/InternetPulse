@@ -2,7 +2,7 @@ name: Check public server catalog
 on:
   push:
     branches: [v1.7, main]
-    paths: ['Resources/Servers.json', 'scripts/check-servers.py', '.github/workflows/servers.yml']
+    paths: ['Resources/Servers.json', 'scripts/check-servers.py', '.github/workflows/servers.yml', 'scripts/discover-servers.py']
   workflow_dispatch:
 permissions:
   contents: read
@@ -15,7 +15,8 @@ jobs:
         with:
           persist-credentials: false
       - run: python3 scripts/check-servers.py
+      - run: python3 scripts/discover-servers.py
       - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
         with:
           name: server-check
-          path: build/server-check.json
+          path: build/server-*.json
