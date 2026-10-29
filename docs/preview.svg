@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="795" viewBox="0 0 1200 795" role="img" aria-labelledby="title desc">
+<title id="title">InternetPulse — Бесконечный Speedtest</title>
+<desc id="desc">Иллюстрация интерфейса с демонстрационными значениями: скачивание, отдача, график и рекорды сессии.</desc>
+<defs>
+ <linearGradient id="bg" x2="1" y2="1"><stop stop-color="#19223a"/><stop offset="1" stop-color="#28182d"/></linearGradient>
+ <linearGradient id="down" x2="1" y2="1"><stop stop-color="#173431"/><stop offset="1" stop-color="#142327"/></linearGradient>
+ <linearGradient id="up" x2="1" y2="1"><stop stop-color="#28253e"/><stop offset="1" stop-color="#1b1c2b"/></linearGradient>
+ <linearGradient id="area" x2="0" y2="1"><stop stop-color="#4aefd9" stop-opacity=".18"/><stop offset="1" stop-color="#4aefd9" stop-opacity="0"/></linearGradient>
+</defs>
+<rect width="1200" height="795" rx="28" fill="#090d13"/>
+<rect x="1" y="1" width="1198" height="793" rx="28" fill="url(#bg)" stroke="#ffffff" stroke-opacity=".09"/>
+<g font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif">
+ <rect x="36" y="35" width="62" height="62" rx="19" fill="#183a36" stroke="#4aefd9" stroke-opacity=".25"/>
+ <path d="M49 67h7l4-13 6 27 7-37 6 31 5-14h5" fill="none" stroke="#4aefd9" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+ <text x="118" y="49" fill="#4aefd9" font-size="12" font-weight="700" letter-spacing="3">INTERNET PULSE</text>
+ <text x="118" y="88" fill="#f5f6f9" font-size="31" font-weight="600" letter-spacing="-1">Бесконечный Speedtest</text>
+ <rect x="899" y="37" width="265" height="60" rx="24" fill="#ffffff" fill-opacity=".035" stroke="#ffffff" stroke-opacity=".09"/>
+ <circle cx="922" cy="67" r="4" fill="#4aefd9"/><text x="934" y="72" fill="#e0e4ea" font-size="13">Тест идёт</text>
+ <path d="M1021 52v29" stroke="#ffffff" stroke-opacity=".14"/>
+ <text x="1040" y="59" fill="#858b97" font-size="8" letter-spacing="2">ОСТАЛОСЬ</text><text x="1040" y="82" fill="#4aefd9" font-family="monospace" font-size="24">12:34</text>
+ <rect x="36" y="128" width="554" height="193" rx="27" fill="url(#down)" stroke="#4aefd9" stroke-opacity=".25"/>
+ <rect x="610" y="128" width="554" height="193" rx="27" fill="url(#up)" stroke="#a68cff" stroke-opacity=".25"/>
+ <text x="63" y="166" fill="#4aefd9" font-size="12" font-weight="600" letter-spacing="3">СКАЧИВАНИЕ</text><text x="637" y="166" fill="#a68cff" font-size="12" font-weight="600" letter-spacing="3">ОТДАЧА</text>
+ <text x="63" y="245" fill="#f5f6f9" font-size="67" font-weight="300" letter-spacing="-3">92,8</text><text x="212" y="245" fill="#959ba5" font-size="15">Мбит/с</text>
+ <text x="637" y="245" fill="#f5f6f9" font-size="67" font-weight="300" letter-spacing="-3">48,6</text><text x="786" y="245" fill="#959ba5" font-size="15">Мбит/с</text>
+ <text x="63" y="292" fill="#959ba5" font-size="12">За этот тест</text><text x="559" y="292" fill="#4aefd9" font-size="13" text-anchor="end">1,82 ГБ</text>
+ <text x="637" y="292" fill="#959ba5" font-size="12">За этот тест</text><text x="1134" y="292" fill="#a68cff" font-size="13" text-anchor="end">0,91 ГБ</text>
+ <rect x="36" y="341" width="1128" height="385" rx="27" fill="#11171f" fill-opacity=".8" stroke="#ffffff" stroke-opacity=".1"/>
+ <text x="63" y="381" fill="#f5f6f9" font-size="20" font-weight="600">Скорость соединения</text>
+ <rect x="993" y="358" width="142" height="34" rx="17" fill="#ffffff" fill-opacity=".055"/>
+ <text x="1012" y="381" fill="#959ba5" font-size="20">−</text><text x="1044" y="379" fill="#d9dce2" font-size="12">1 мин</text><text x="1107" y="381" fill="#959ba5" font-size="20">+</text>
+ <text x="63" y="418" fill="#4aefd9" font-size="12">↓ Скачивание</text><text x="227" y="418" fill="#a68cff" font-size="12">↑ Отдача</text>
+ <text x="63" y="444" fill="#f5f6f9" font-size="25" font-weight="300">92,8</text><text x="127" y="444" fill="#858b97" font-size="11">Мбит/с</text>
+ <text x="227" y="444" fill="#f5f6f9" font-size="25" font-weight="300">48,6</text><text x="291" y="444" fill="#858b97" font-size="11">Мбит/с</text>
+ <text x="63" y="477" fill="#858b97" font-size="10">Мбит/с</text>
+ <g stroke="#ffffff" stroke-opacity=".07" stroke-dasharray="3 6"><path d="M111 492h1023M111 532h1023M111 572h1023M111 612h1023"/></g>
+ <path d="M111 652h1023" stroke="#ffffff" stroke-opacity=".13"/>
+ <g fill="#858b97" font-size="10" font-family="monospace" text-anchor="end"><text x="96" y="496">100</text><text x="96" y="536">75</text><text x="96" y="576">50</text><text x="96" y="616">25</text><text x="96" y="656">0</text></g>
+ <path d="M111 538 160 536 210 543 260 519 310 525 360 510 410 515 460 527 510 518 560 523 610 506 660 512 710 507 760 518 810 511 860 510 910 501 960 506 1010 504 1060 509 1134 503V652H111Z" fill="url(#area)"/>
+ <path d="M111 538 160 536 210 543 260 519 310 525 360 510 410 515 460 527 510 518 560 523 610 506 660 512 710 507 760 518 810 511 860 510 910 501 960 506 1010 504 1060 509 1134 503" fill="none" stroke="#4aefd9" stroke-width="3" stroke-linejoin="round"/>
+ <path d="M111 578 160 576 210 580 260 576 310 574 360 581 410 575 460 579 510 577 560 581 610 576 660 579 710 575 760 576 810 580 860 579 910 576 960 578 1010 575 1060 578 1134 574" fill="none" stroke="#a68cff" stroke-width="3" stroke-linejoin="round"/>
+ <circle cx="1134" cy="503" r="4" fill="#4aefd9"/><circle cx="1134" cy="574" r="4" fill="#a68cff"/>
+ <g fill="#858b97" font-size="10" font-family="monospace"><text x="111" y="672">16:05:00</text><text x="452" y="672">16:05:20</text><text x="793" y="672">16:05:40</text><text x="1134" y="672" text-anchor="end">16:06:00</text></g>
+ <text x="63" y="705" fill="#959ba5" font-size="11">Рекорды сессии</text><text x="227" y="705" fill="#4aefd9" font-size="11">↓ 98,2 Мбит/с</text><text x="390" y="705" fill="#a68cff" font-size="11">↑ 51,0 Мбит/с</text>
+ <text x="36" y="764" fill="#77808d" font-size="11">Пример интерфейса · демонстрационные данные</text><text x="1164" y="764" fill="#77808d" font-size="11" text-anchor="end">v1.6.0 · macOS</text>
+</g></svg>
