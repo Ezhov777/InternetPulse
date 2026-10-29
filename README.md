@@ -42,12 +42,14 @@ macOS 14+ / Apple Silicon · Windows 11 / x64
 
 ## Скачать и запустить
 
+[Первый запуск на Mac: пошаговая инструкция с картинками](docs/MAC_FIRST_LAUNCH.md).
+
 Откройте [последний релиз](https://github.com/Ezhov777/InternetPulse/releases/latest) и выберите архив:
 
 | Система | Архив | Запуск |
 |---|---|---|
-| macOS 14+, Apple Silicon | `InternetPulse-1.7.0-macos-arm64.zip` | Распакуйте, перенесите `InternetPulse.app` в «Программы» |
-| Windows 11, x64 | `InternetPulse-1.7.0-win11-x64.zip` | Распакуйте всю папку и запустите `InternetPulse.exe` |
+| macOS 14+, Apple Silicon | `InternetPulse_1.7.0_macOS_arm64.zip` | Распакуйте, перенесите `InternetPulse.app` в «Программы» |
+| Windows 11, x64 | `InternetPulse_1.7.0_Windows11_x64.zip` | Распакуйте всю папку и запустите `InternetPulse.exe` |
 
 Перед заменой приложения закройте предыдущую версию. Готовым сборкам не нужны Xcode, Developer Tools, Visual Studio или отдельная установка .NET. Windows-архив содержит необходимые компоненты .NET; файлы из папки нужно хранить вместе.
 
