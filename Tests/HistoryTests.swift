@@ -40,9 +40,9 @@ import Foundation
         assert(TestServer.all.count>=59)
         for country in ["GB","US","FR","DE","ES"] {assert((10...15).contains(TestServer.all.filter{$0.country==country}.count))}
         for locale in ["ru_RU","en_GB","fr_FR","de_DE","es_ES"] {
-            let formatted=TrafficFormat.amount(30_232_170_000,unit:"MB",locale:Locale(identifier:locale))
-            assert(formatted.contains("30") && formatted.contains("232"))
-            assert(!formatted.contains("30232"))
+            let formatted=TrafficFormat.amount(42_819_560_000,unit:"MB",locale:Locale(identifier:locale))
+            assert(formatted.contains("42") && formatted.contains("819"))
+            assert(!formatted.contains("42819"))
         }
         assert(TrafficFormat.amount(1_000_000_000_000,unit:"TB",locale:Locale(identifier:"ru_RU"))=="1,00 ТБ")
         defaults.set("ГБ",forKey:"historyUnit");assert(Monitor(defaults:defaults).historyUnit=="GB")

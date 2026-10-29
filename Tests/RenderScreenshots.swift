@@ -19,12 +19,12 @@ import SwiftUI
             model.down=182.4;model.up=48.7
             model.downloaded=6_170_000_000;model.uploaded=1_380_000_000
             model.historyUnit="MB"
-            model.dailyHistory=[DailyTraffic(date:Date(timeIntervalSince1970:1793232000),downloaded:30_232_170_000,uploaded:7_130_690_000),DailyTraffic(date:Date(timeIntervalSince1970:1793145600),downloaded:12_640_000_000,uploaded:2_150_000_000)]
+            model.dailyHistory=[DailyTraffic(date:Date(timeIntervalSince1970:1793232000),downloaded:42_819_560_000,uploaded:8_427_130_000),DailyTraffic(date:Date(timeIntervalSince1970:1793145600),downloaded:12_640_000_000,uploaded:2_150_000_000)]
             model.peakDown=243.5;model.peakUp=71.2;model.latency=24
-            let end=Date(timeIntervalSince1970:1793296320)
+            let end=ISO8601DateFormatter().date(from:"2026-10-29T18:12:00+03:00")!
             model.samples=(0...120).map { i in let t=Double(i);return Sample(date:end.addingTimeInterval(t-120),down:155+35*sin(t/13)+15*cos(t/5),up:40+8*sin(t/11),downloaded:0,uploaded:0,latency:24,errors:0) }
             model.down=model.samples.last!.down;model.up=model.samples.last!.up
-            model.events=["18:12:00  "+L("Интернет HTTP · {0} потоков · {1}","4",L("На максимум")),"18:08:00  "+L("Тест успешно завершён")]
+            model.events=["18:07:14  "+L("Интернет HTTP · {0} потоков · {1}","4",L("На максимум")),"18:06:00  "+L("Тест успешно завершён")]
             let view=ContentView(model:model).environment(\.locale,AppLanguage.shared.locale).frame(width:1100,height:1950)
             let host=NSHostingView(rootView:view)
             let window=NSWindow(contentRect:NSRect(x:0,y:0,width:1100,height:1950),styleMask:[.borderless],backing:.buffered,defer:false)
